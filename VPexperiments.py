@@ -31,7 +31,7 @@ vpq:q1 a vps:Quotation;
 vp:pe1 a vps:PriceExpression;
     vps:textData "Wheat, eight shillings and six-pence the bushel."^^xsd:string;
     vps:textOffsets "[[4, 52]]"^^xsd:string;
-    vps:hasPricedThing [ a vps:ThingPriced ;
+    vps:hasPricedThing [ a vps:PricedThing ;
             vps:textData "Wheat, the bushel"^^xsd:string ;
             vps:textOffsets "[[4,9],[41,52]]"^^xsd:string ] ;
     vps:hasValueExpression [ a vps:ValueExpression ;
@@ -50,7 +50,7 @@ vpq:q2 a vps:Quotation;
 vp:pe2 a vps:PriceExpression;
     vps:textData "most noble Anti-Syphilicon is but Six Shillings a Pot"^^xsd:string ;
     vps:textOffsets "[[1,220]]"^^xsd:string ;
-    vps:hasPricedThing [ a vps:ThingPriced ;
+    vps:hasPricedThing [ a vps:PricedThing ;
             vps:textData "Anti-Syphilicon a pot"^^xsd:string ;
             vps:textOffsets "[[30,45],[67,72]]"^^xsd:string ] ;
     vps:hasValueExpression [a vps:ValueExpression ;
@@ -80,9 +80,6 @@ where { ?s a vps:Quotation;
                 
     }
 """
-
-# import sys
-# sys.path.insert(0, "/Users/jjc/ComputerInfo/RDF/rdflib/")
 
 from rdflib import ConjunctiveGraph#, Graph, Namespace, BNode, URIRef, Literal, RDF, RDFS, OWL, XSD, plugin, query      
 import decimal
