@@ -16,12 +16,16 @@ ex1 = """
 @prefix vps: <http://visibleprices.org/vp-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc:   <http://purl.org/dc/elements/1.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> . @prefix rdfa: <http://www.w3.org/ns/rdfa#> .
 
 unit:ASPound a qudt:CurrencyUnit ;
     rdfs:label "Anglo-Saxon Pound"^^xsd:string ;
     qudt:abbreviation "ASP"^^xsd:string ;
     qudt:description "Currency in Britain until 1971" ;
-    skos:exactMatch <http://en.wikipedia.org/wiki/Anglo-Saxon_pound> .
+    skos:exactMatch <http://dbpedia.org/resource/Anglo-Saxon_pound> .
 
 vpq:q1 a vps:Quotation;
     vps:textData "Wheat, eight shillings and six-pence the bushel."^^xsd:string;
@@ -32,16 +36,16 @@ vp:pe1 a vps:PriceExpression;
     vps:textData "Wheat, eight shillings and six-pence the bushel."^^xsd:string;
     vps:textOffsets "[[4, 52]]"^^xsd:string;
     vps:hasPricedThing [ a vps:PricedThing ;
-            vps:textData "Wheat, the bushel"^^xsd:string ;
-            vps:textOffsets "[[4,9],[41,52]]"^^xsd:string ] ;
+        vps:textData "Wheat, the bushel"^^xsd:string ;
+        vps:textOffsets "[[4,9],[41,52]]"^^xsd:string ] ;
     vps:hasValueExpression [ a vps:ValueExpression ;
-            vps:textData "eight shillings and six-pence"^^xsd:string ;
-            vps:textOffsets "[[11, 40]]"^^xsd:string ] ;
-            vps:normalizedValue [ a vps:NormalizedValue ;
-                vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
-                vps:currency unit:ASPound;
-                vps:pence "102"^^xsd:decimal ] .
-                
+        vps:textData "eight shillings and six-pence"^^xsd:string ;
+        vps:textOffsets "[[11, 40]]"^^xsd:string ] ;
+        vps:normalizedValue [ a vps:NormalizedValue ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
+            vps:currency unit:ASPound;
+            vps:pence "102"^^xsd:decimal ] .
+            
 vpq:q2 a vps:Quotation;
     vps:textData "The Price of this most noble Anti-Syphilicon is but Six Shillings a Pot, which considering its extraordinary Efficacy, one Pot only being sufficient in most Cases to accomplish the Cure, is not a tenth Part of its Value"^^xsd:string ;
     vps:hasPriceExpression vp:pe2 ;
@@ -51,33 +55,114 @@ vp:pe2 a vps:PriceExpression;
     vps:textData "most noble Anti-Syphilicon is but Six Shillings a Pot"^^xsd:string ;
     vps:textOffsets "[[1,220]]"^^xsd:string ;
     vps:hasPricedThing [ a vps:PricedThing ;
-            vps:textData "Anti-Syphilicon a pot"^^xsd:string ;
-            vps:textOffsets "[[30,45],[67,72]]"^^xsd:string ] ;
+        vps:textData "Anti-Syphilicon a pot"^^xsd:string ;
+        vps:textOffsets "[[30,45],[67,72]]"^^xsd:string ] ;
     vps:hasValueExpression [a vps:ValueExpression ;
-            vps:textData "Six Shillings"^^xsd:string ;
-            vps:textOffsets "[[53,66]]"^^xsd:string ] ;
-            vps:normalizedValue [ a vps:NormalizedValue ;
-                vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
-                vps:currency unit:ASPound;
-                vps:pence "72"^^xsd:decimal ] .
+        vps:textData "Six Shillings"^^xsd:string ;
+        vps:textOffsets "[[53,66]]"^^xsd:string ] ;
+    vps:normalizedValue [ a vps:NormalizedValue ;
+        vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
+        vps:currency unit:ASPound;
+        vps:pence "72"^^xsd:decimal ] .
+ 
+ vpq:q3 a vps:Quotation;
+ 	vps:textData "The Norman Razor is the only one that will stand the test by which a Quick, Clean, and Easy Shave may be effected. It Is the most Novel and Perfect Razor of the day. See Testimonials. Black handles, 3s. 6d. Ivory, 5 s. each ; with Patent Guards, perfect security from cutting the face, 2s. each extra;"^^xsd:string ;
+ 	vps:hasPriceExpression vp:pe3 ;
+ 	vps:hasPriceExpression vp:pe4 ;
+ 	vps:hasPriceExpression vp:pe5 ;
+ 	dc:isPartOf <http://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+ 	schema:headline "The Norman Razor is the only one" ;
+    bibo:bookSection "The Lancet General Advertiser" ;
+    bibo:pages "1" ;
+    bibo:bibdata "Placeholder. I'm not sure what vocabulary should represent the graphical location, i.e. column and placement."^^xsd:string .
+ 	
+ vp:pe3 a vps:PriceExpression ;
+ 	vps:textData "The Norman Razor Black handles, 3s. 6d."^^xsd:string ;
+ 	vps:textOffsets "[[4 20],[188 210]]"^^xsd:string ;
+ 	vps:hasPricedThing [ a vps:PricedThing ;
+ 		vps:textData "The Norman Razor Black handles."^^xsd:string ;
+ 		vps:textOffsets "[[4 20],[188 201]]"^^xsd:string ] ;
+ 	vps:hasValueExpression [ a vps:ValueExpression ;
+ 	    vps:textData "3s. 6d."^^xsd:string ;
+ 	    vps:textOffsets "[[203 210]]"^^xsd:string ] ;
+    vps:normalizedValue [
+        vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+        vps:currency unit:ASPound ;
+        vps:pence "42"^^xsd:decimal ] .    
+            
+ vp:pe4 a vps:PriceExpression ;
+ 	vps:textData "Ivory, 5 s. The Norman Razor"^^xsd:string ;
+ 	vps:textOffsets "[[211 222],[4 20]]"^^xsd:string ;
+ 	vps:hasPricedThing [ a vps:PricedThing ;
+ 		vps:textData "Ivory The Norman Razor"^^xsd:string ;
+ 		vps:textOffsets "[[211 216],[4 20]]"^^xsd:string ] ;
+ 	vps:hasValueExpression [ a vps:ValueExpression ;
+ 	    vps:textData "5 s."^^xsd:string ;
+ 	    vps:textOffsets "[[218 221]]"^^xsd:string ] ;
+    vps:normalizedValue [
+        vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
+        vps:currency unit:ASPound;
+        vps:pence "60"^^xsd:decimal ] .    
+            
+ vp:pe5 a vps:PriceExpression ;
+ 	vps:textData "with Patent Guards 2s. each extra The Norman Razor"^^xsd:string ;
+ 	vps:textOffsets "[[230 248],[290 304],[4 20]]"^^xsd:string ;
+ 	vps:hasPricedThing [ a vps:PricedThing ;
+ 		vps:textData "with Patent Guards each extra The Norman Razor"^^xsd:string ;
+ 		vps:textOffsets "[[230 248],[294 304],[4 20]]"^^xsd:string ] ;
+ 	vps:hasValueExpression [ a vps:ValueExpression ;
+ 	    vps:textData "2s"^^xsd:string ;
+ 	    vps:textOffsets "[[290 292]]"^^xsd:string ] ;
+    vps:normalizedValue [
+        vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string;
+        vps:currency unit:ASPound;
+        vps:pence "24"^^xsd:decimal ] .    
+            
+<http://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> a bibo:journal ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dc:date "1852-01-17" ;
+    bibo:volume "1" ;
+    bibo:issue "2" ;
+    bibo:editor vps:person1 ;
+    dc:publisher vps:person2 ;
+    bibo:distributor <http://books.google.com> .
+    
+vps:person1 a foaf:Person ;
+    foaf:givenname "Thomas" ;
+    foaf:family_name "Wakley" ;
+    bibo:bibdata "Placeholder containing other text listed with Wakley's name: Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string .
+
+ vps:person2 a foaf:Person ;
+    foaf:givenname "George" ;
+    foaf:family_name "Churchill" ;
+    vcard:hasAddress [ a vcard:Work;
+       vcard:country-name "England" ;
+       vcard:locality "London" ;
+       vcard:street-address "22 Strand" ] .       
+ 	
+ 	                
 """
 
 # define query:
 VPquery = u"""
-select ?textdata ?pence
-where { ?s a vps:Quotation;
-            vps:textData ?textdata;
+SELECT ?textdata ?headline ?pence
+WHERE { ?s a vps:Quotation;
             vps:hasPriceExpression ?vpsPE .
                 
         ?vpsPE a vps:PriceExpression;
                 vps:normalizedValue [
                     vps:pence ?pence
+                ] ;
+                vps:hasPricedThing [
+                    vps:textData ?textdata
                 ] .
+        
+        OPTIONAL {
+            ?s schema:headline ?headline .
+        }
                 
-        filter (?pence > 70 &&
-                ?pence < 105)
-                
-                
+        FILTER (?pence > 40 &&
+                ?pence < 500)
     }
 """
 
@@ -117,16 +202,16 @@ g.parse(data=ex1, format="n3")
 
 res = g.query(VPquery)
 for x in res:
-    print "quotation text: %s\n\
-            price in pence: %s\n\
-            price in ASP (Pounds, shillings, and pence): %s\n~~~~~~~~~~\n" % (x[0], x[1], penniesToTuple(eval(x[1])))
+    print """
+    Priced thing: %s
+    headline: %s
+    price in ASP (Pounds, shillings, and pence): %s
+    ~~~~~~~~~~""" % (x[0], x[1], penniesToTuple(eval(x[2])))
 
 
 print '\n#################\n'
 print g.serialize(format='n3')
     
-
-
 
 ################### related example data below this line #######################
 ###################    not needed for the script above   #######################
