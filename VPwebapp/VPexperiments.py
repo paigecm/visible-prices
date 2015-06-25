@@ -12,7 +12,8 @@ from hashlib import sha1
 from pprint import pprint
 from decimal import Decimal
 import rdflib
-from rdflib import ConjunctiveGraph, Graph, Namespace, BNode, URIRef, Literal, RDF, RDFS, OWL, XSD, plugin, query      
+from rdflib import ConjunctiveGraph, Graph, Namespace, BNode, URIRef, Literal, RDF, RDFS, OWL, XSD, plugin, query
+from rdflib.collection import Collection
 import decimal
 
 import requests
@@ -24,29 +25,6 @@ import logging
 logging.basicConfig(level=10)
 
 cgitb.enable(format="text")
-
-# define query:
-VPquery = u"""
-select ?textdata ?headline ?pence
-where { ?s a vps:Quotation;
-            vps:textData ?textdata;
-            vps:hasPriceExpression ?vpsPE .
-                
-        ?vpsPE a vps:PriceExpression;
-                vps:normalizedValue [
-                    vps:pence ?pence
-                ] .
-        
-        OPTIONAL {
-            ?s schema:headline ?headline .
-        }
-                
-        filter (?pence > 40 &&
-                ?pence < 500)
-                
-                
-    }
-"""
 
 ### Anglo-Saxon Pound calculations:
 def tupleToPennies(t):
@@ -76,16 +54,139 @@ def subtractASP(t1,t2):
 
 
 ### Generate RDF graph in memory and execute query:
-g = ConjunctiveGraph()
-g.parse("testgraph.n3", format="n3")
+oa = Namespace("http://www.w3.org/ns/oa#")
+vps = Namespace("http://visibleprices.org/")
+
+
+ggraph = ConjunctiveGraph()
+ggraph.parse("data/testgraph.n3", format="n3") ## NB: if we're gonna write to the file, then the webserver process owner (_www in my case) has to own both the file and the directory it's in.
+
+tquery = """
+SELECT ?textdata ?headline ?pence
+WHERE { ?s a vps:Quotation;
+            vps:hasPriceExpression ?vpsPE .
+                
+        ?vpsPE a vps:PriceExpression;
+                vps:textData ?textdata;
+                vps:normalizedValue [
+                    vps:pence ?pence
+                ] .
+        
+        OPTIONAL {
+            ?s schema:headline ?headline .
+        }
+                
+        FILTER (?pence > 40 &&
+                ?pence < 500)
+    }
+"""
+
+### Annotate named subjects
+
+
+def write_to_graph(g_in, testgraph):
+    """ with some kind of formal storage layer, replace this with appropriate API calls. For now we'll just serialize the graph and overwrite the file. """
+    for t in g_in.triples((None, None, None)):
+        testgraph.add((t))
+        f = open("data/testgraph.n3", "w")
+        f.write(testgraph.serialize(format="turtle"))
+        f.close()
+
+def annotationExists(uri):
+    uri = URIRef(uri)
+    if (uri, None, None) in ggraph:
+        return True
     
+
+def annotation(target, user_name, comment, keywds=None):
+    """thisAnnotation id is the full string, eg:
+    http://visibleprices.org/user/jjon/annotation/92c53723ba5f1e162e7c44e8bf8c71d02ed4065a
+    the last element being a hash (hashlib.sha1(oa:hastarget).hexdigest()) of this full string:
+    http://visibleprices.org/quotations/q3
+    TODO:
+        * read up oa for use of BNode for body element
+        * make keywds optional parameter
+    """
+
+    target = target
+    thisAnnotationURI = "http://visibleprices.org/user/%s/annotation/%s" % (user_name, sha1(target).hexdigest()[:16])
+    
+    if annotationExists(thisAnnotationURI):
+        return {'annotationExists': "You've already annotated this resource: %s \nPresumably you could make a separate annotation with a different username. If you start doing that, you should keep track of all your usernames. With authentication and session logic, this won't be necessary." % (target)}
+    else:
+        thisann = URIRef(thisAnnotationURI)
+        g = Graph()
+        bodyNode = BNode()
+        keywordCollection = BNode()
+
+        triples = [
+            (thisann, RDF.type, oa.Annotation),
+            (thisann, oa.hasTarget, URIRef(target)),
+            (thisann, oa.hasBody, bodyNode),
+            (bodyNode, vps.userComment, Literal(comment, datatype=XSD.string))
+        ]
+        for t in triples: g.add(t)
+        
+        if keywds:
+            g.add((bodyNode, vps.keyWords, keywordCollection))
+            kws = [Literal(x, datatype=XSD.string) for x in keywds]
+            c = Collection(g, keywordCollection, kws)
+        
+        write_to_graph(g, ggraph)
+        
+
+        return {"serialized_annotation_triples": g.serialize(format='turtle')}
+
 
 if __name__ == "__main__":
     form = cgi.FieldStorage()
+    
+    
+# The dummy class mimics the FieldStorage object in this limited respect:
+# we can initiate our dummy 'form' like this:
+#     form = dummy()
+#     form['sparqlQuery'] = tquery
+#     
+# and access it like this:
+#     form.getvalue("sparqlQuery")
+#     
+# OR
+# 
+# we can initiate it like this:
+#     form = {"serialize": dummy('n3')}
+#     
+# and access it like this:
+#     form["serialize"].value
+#
+## DEBUG at command line or in editor
+#     class FakeStorage(dict):
+#         def __init__(self, s=None):
+#             self.value = s
+#         def getvalue(self, k):
+#             return self[k]
+#
+# opt. 1
+#     form = fakeStorage()
+#     form['sparqlQuery'] = tquery
+#
+# opt. 2
+#    form = {'serialize': FakeStorage('n3')}
+# 
+#     form = FakeStorage()
+#     form["target"] = "http://visibleprices.org/vp-schema#person1"
+#     form["username"] = "jfdks"
+#     form["comment"] = "person 1 is a foobar"
+#     form["keywords"] = "fee, fie, fo fum"
+
     try:
+        if "namedSubjects" in form:
+            print "Content-Type: application/json\n"
+            print "\n"
+            print json.dumps(list(set(x.toPython() for x in ggraph.subjects() if not isinstance(x, BNode))))
+
         if "sparqlQuery" in form:
-            query = unicode(form.getvalue('sparqlQuery'))
-            result = g.query(query)
+            query = form.getvalue("sparqlQuery")
+            result = ggraph.query(query)
             
             print "Content-Type: text/plain\n"
         
@@ -94,13 +195,26 @@ if __name__ == "__main__":
                     print "%s: %s" % y
                 print "~~~~~~~~~~~~\n"
 
+        ##need print result function that does this for select
+        ##queries, but can also handle the result of construct, ask,
+
         if "serialize" in form:
-            sformat = form.getvalue('serialize_format')
-            serialized_graph = pprint(g.serialize(format = sformat))
+            sformat = form['serialize'].value
             print "Content-Type: text/plain\n"
             print "\n"
-            print g.serialize(format = sformat)
-    
+            print ggraph.serialize(format = sformat)
+
+        if "target" in form:
+            target = form.getvalue("target")
+            usr = form.getvalue("username")
+            comment = form.getvalue("comment")
+            keywds = form.getvalue("keywords")
+            keywds = [x.strip() for x in keywds.split(",")] if keywds else None
+            
+            print "Content-Type: application/json\n"
+            print "\n"
+            print json.dumps(annotation(target, usr, comment, keywds))
+
         if not form:
             print "Content-Type: text/plain\n"
             print "\n"

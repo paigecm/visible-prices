@@ -1,0 +1,139 @@
+@prefix bibo: <http://ex.org/bibo#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix vp: <http://visibleprices.org/> .
+@prefix vpq: <http://visibleprices.org/quotations/> .
+@prefix vps: <http://visibleprices.org/vp-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vpq:q1 a vps:Quotation ;
+    bibo:bibdata "Placeholder. Whatever property is here should point to a resource containing all the necessary bibliographical data to precisely locate the quoted text."^^xsd:string ;
+    vps:hasPriceExpression vp:pe1 ;
+    vps:textData "Wheat, eight shillings and six-pence the bushel."^^xsd:string .
+
+vpq:q2 a vps:Quotation ;
+    bibo:bibdata "placeholder"^^xsd:string ;
+    vps:hasPriceExpression vp:pe2 ;
+    vps:textData "The Price of this most noble Anti-Syphilicon is but Six Shillings a Pot, which considering its extraordinary Efficacy, one Pot only being sufficient in most Cases to accomplish the Cure, is not a tenth Part of its Value"^^xsd:string .
+
+vpq:q3 a vps:Quotation ;
+    bibo:bibdata "Placeholder. I'm not sure what vocabulary should represent the graphical location, i.e. column and placement."^^xsd:string ;
+    bibo:bookSection "The Lancet General Advertiser" ;
+    bibo:pages "1" ;
+    dc:isPartOf <http://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    schema:headline "The Norman Razor is the only one" ;
+    vps:hasPriceExpression vp:pe3,
+        vp:pe4,
+        vp:pe5 ;
+    vps:textData "The Norman Razor is the only one that will stand the test by which a Quick, Clean, and Easy Shave may be effected. It Is the most Novel and Perfect Razor of the day. See Testimonials. Black handles, 3s. 6d. Ivory, 5 s. each ; with Patent Guards, perfect security from cutting the face, 2s. each extra;"^^xsd:string .
+
+<http://visibleprices.org/user/jjon/annotation/62dd1b9d38645e0a> a ns1:Annotation ;
+    ns1:hasBody [ vp:keyWords ( "foo"^^xsd:string "bar"^^xsd:string "baz bomb"^^xsd:string ) ;
+            vp:userComment "person 1 is a foobar"^^xsd:string ] ;
+    ns1:hasTarget vps:person1 .
+
+<http://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> a bibo:journal ;
+    bibo:distributor <http://books.google.com> ;
+    bibo:editor vps:person1 ;
+    bibo:issue "2" ;
+    bibo:volume "1" ;
+    dc:date "1852-01-17" ;
+    dc:publisher vps:person2 ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string .
+
+vp:pe1 a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:textData "Wheat, the bushel"^^xsd:string ;
+            vps:textOffsets "[[4,9],[41,52]]"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:textData "eight shillings and six-pence"^^xsd:string ;
+            vps:textOffsets "[[11, 40]]"^^xsd:string ] ;
+    vps:normalizedValue [ a vps:NormalizedValue ;
+            vps:currency unit:ASPound ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+            vps:pence 102.0 ] ;
+    vps:textData "Wheat, eight shillings and six-pence the bushel."^^xsd:string ;
+    vps:textOffsets "[[4, 52]]"^^xsd:string .
+
+vp:pe2 a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:textData "Anti-Syphilicon a pot"^^xsd:string ;
+            vps:textOffsets "[[30,45],[67,72]]"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:textData "Six Shillings"^^xsd:string ;
+            vps:textOffsets "[[53,66]]"^^xsd:string ] ;
+    vps:normalizedValue [ a vps:NormalizedValue ;
+            vps:currency unit:ASPound ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+            vps:pence 72.0 ] ;
+    vps:textData "most noble Anti-Syphilicon is but Six Shillings a Pot"^^xsd:string ;
+    vps:textOffsets "[[1,220]]"^^xsd:string .
+
+vp:pe3 a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:textData "The Norman Razor Black handles."^^xsd:string ;
+            vps:textOffsets "[[4 20],[188 201]]"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:textData "3s. 6d."^^xsd:string ;
+            vps:textOffsets "[[203 210]]"^^xsd:string ] ;
+    vps:normalizedValue [ vps:currency unit:ASPound ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+            vps:pence 42.0 ] ;
+    vps:textData "The Norman Razor Black handles, 3s. 6d."^^xsd:string ;
+    vps:textOffsets "[[4 20],[188 210]]"^^xsd:string .
+
+vp:pe4 a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:textData "Ivory The Norman Razor"^^xsd:string ;
+            vps:textOffsets "[[211 216],[4 20]]"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:textData "5 s."^^xsd:string ;
+            vps:textOffsets "[[218 221]]"^^xsd:string ] ;
+    vps:normalizedValue [ vps:currency unit:ASPound ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+            vps:pence 60.0 ] ;
+    vps:textData "Ivory, 5 s. The Norman Razor"^^xsd:string ;
+    vps:textOffsets "[[211 222],[4 20]]"^^xsd:string .
+
+vp:pe5 a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:textData "with Patent Guards each extra The Norman Razor"^^xsd:string ;
+            vps:textOffsets "[[230 248],[294 304],[4 20]]"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:textData "2s"^^xsd:string ;
+            vps:textOffsets "[[290 292]]"^^xsd:string ] ;
+    vps:normalizedValue [ vps:currency unit:ASPound ;
+            vps:normalizedValueDetail "A-S Pound expressed in pence"^^xsd:string ;
+            vps:pence 24.0 ] ;
+    vps:textData "with Patent Guards 2s. each extra The Norman Razor"^^xsd:string ;
+    vps:textOffsets "[[230 248],[290 304],[4 20]]"^^xsd:string .
+
+vps:person2 a foaf:Person ;
+    vcard:hasAddress [ a vcard:Work ;
+            vcard:country-name "England" ;
+            vcard:locality "London" ;
+            vcard:street-address "22 Strand" ] ;
+    foaf:family_name "Churchill" ;
+    foaf:givenname "George" .
+
+vps:person1 a foaf:Person ;
+    bibo:bibdata "Placeholder containing other text listed with Wakley's name: Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    foaf:family_name "Wakley" ;
+    foaf:givenname "Thomas" .
+
+unit:ASPound a qudt:CurrencyUnit ;
+    rdfs:label "Anglo-Saxon Pound"^^xsd:string ;
+    qudt:abbreviation "ASP"^^xsd:string ;
+    qudt:description "Currency in Britain until 1971" ;
+    skos:exactMatch <http://dbpedia.org/resource/Anglo-Saxon_pound> .
+

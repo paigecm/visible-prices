@@ -202,11 +202,9 @@ g.parse(data=ex1, format="n3")
 
 res = g.query(VPquery)
 for x in res:
-    print """
-    Priced thing: %s
-    headline: %s
-    price in ASP (Pounds, shillings, and pence): %s
-    ~~~~~~~~~~""" % (x[0], x[1], penniesToTuple(eval(x[2])))
+    print "Priced thing: %s\n\
+            headline: %s\n\
+            price in ASP (Pounds, shillings, and pence): %s\n~~~~~~~~~~\n" % (x[0], x[1], penniesToTuple(eval(x[2])))
 
 
 print '\n#################\n'
