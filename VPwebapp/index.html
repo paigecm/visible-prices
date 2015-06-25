@@ -8,6 +8,19 @@
 <script src="textinputs_jquery.js" type="text/javascript"></script>
 <script src="VPexperiments.js" type="text/javascript"></script>
 <style>
+    body {font-family: Didot, Garamond, Times, serif;}
+    #annot-dialog {
+        background-color: rgb(235, 239, 216);
+        color: black;
+        font-family: verdana, helvetica, sans-serif;
+        font-size: 9pt;
+        padding: 0 9px 30px 9px;
+        width: 98%;
+        height:90%;
+    }
+
+    #annotation-input {border: double #800; padding: 6px}
+        
     #modalsink {display: none}
     #modalsink pre {
         font-family: "bitstream vera sans mono", monaco, verdana, arial, monospace; font-size: 9pt;
@@ -27,6 +40,10 @@
         border:6px solid #888; 
         padding:12px;
     }
+    
+/* 
+    .simplemodal-wrap {overflow-y: scroll}
+ */
 
     #simplemodal-container a.modalCloseImg {
         background:url(close.png) no-repeat; /* adjust url as required */
@@ -46,7 +63,7 @@
         float: left
     }
 
-    dt {font-weight: bold; font-size: 120%;}
+    dt {font-weight: bold}
 
     .searchform {
       width: 800px;
@@ -56,6 +73,8 @@
       }
 
     textarea {padding: 12px}
+    
+    #modalsink pre {color: #0f0}
 
 </style>
 </head>
@@ -119,6 +138,22 @@ WHERE { ?s a vps:Quotation;
                             <input type="submit" value="show me the graph" id="serializeButton"></input>
                         </td>
                     </tr> 
+                </table>
+            </form>
+            </dd>
+            <dt>Named Subjects</dt>
+            <dd>
+            <form class="searchform" id="NamedSubjectsForm" method="get" action="">
+                <table>
+                    <tr>
+                        <td>
+                            <select id="subjects">
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" value="annotate this resource" id="annotateThis"></input>
+                        </td>
+                    </tr>
                 </table>
             </form>
             </dd>

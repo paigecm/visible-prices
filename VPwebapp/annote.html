@@ -1,0 +1,29 @@
+<style>
+.tkey {width: 25%}
+</style>
+
+<div id="annot-dialog">
+    <p style="font-weight: bold; font-size: %120">Annotate this resource: {0}</h1>
+    <p>NB: there's no form validation at work here as yet.</p>
+    <table id="annotation-input">
+        <tr>
+            <td class='tkey'>Username:<br/>
+            <span style="font-size: 66%">All lower-case ascii, no spaces or other whitespace. This string will be used to generate the URI for this annotation</span></td>
+            <td><input name="user" type="text"></td>
+        </tr>
+        <tr>
+            <td class='tkey'>Comment: <br/>
+            <span style="font-size: 66%">(plaintext to 400 characters)</span></td>
+            <td><textarea id="annotComment" rows="3" cols="80" maxlength="400"></textarea></td>
+        </tr>
+        <tr>
+            <td class='tkey'>Keywords:<br/>
+            <span style="font-size: 66%">(comma separated list to 80 characters)</span></td>
+            <td><input type="text" name="keywords" size="80"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding: 6px"><button id="dothis" style="height: 30px">save this annotation to the graph</button></td>
+        </tr>
+    </table>
+</div>
