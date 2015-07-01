@@ -80,6 +80,17 @@ WHERE { ?s a vps:Quotation;
                 ?pence < 500)
     }
 """
+kwquery = """
+# example query retrieving all annotation keywords
+
+SELECT ?annotated_resource ?annotationURI ?keyword
+WHERE { ?annotationURI a oa:Annotation ;
+            oa:hasTarget ?annotated_resource ;
+            oa:hasBody [ vp:keyWords ?list ] .
+        ?list rdf:rest*/rdf:first ?keyword  .
+}
+"""
+
 
 ### Annotate named subjects
 
@@ -190,13 +201,16 @@ if __name__ == "__main__":
             
             print "Content-Type: text/plain\n"
         
-            for x in result.bindings:
-                for y in x.items():
-                    print "%s: %s" % y
-                print "~~~~~~~~~~~~\n"
+            if re.search('select\s+?', query, re.IGNORECASE):
+                for x in result.bindings:
+                    for y in x.items():
+                        print "%s: %s" % y
+                    print "~~~~~~~~~~~~\n"
+            
+            elif re.search('construct\s+{', query, re.IGNORECASE):
+                print result.serialize(format="turtle")
 
-        ##need print result function that does this for select
-        ##queries, but can also handle the result of construct, ask,
+        ##need to handle 'ASK' queries too; rdflib does not support 'DESCRIBE' yet.
 
         if "serialize" in form:
             sformat = form['serialize'].value
