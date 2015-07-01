@@ -89,24 +89,17 @@
                         <td class="tkey" style="text-align: center; padding: 12px">SPARQL query:</td>
                         <td>
 <textarea id="sparqlQuery" rows="16" cols="80">
-SELECT ?textdata ?headline ?pence
-WHERE { ?s a vps:Quotation;
-            vps:hasPriceExpression ?vpsPE .
-                
-        ?vpsPE a vps:PriceExpression;
-                vps:textData ?textdata;
-                vps:normalizedValue [
-                    vps:pence ?pence
-                ] .
-        
-        OPTIONAL {
-            ?s schema:headline ?headline .
-        }
-                
-        FILTER (?pence > 40 &&
-                ?pence < 500)
-    }
-</textarea>
+# now handling both "SELECT" and "CONSTRUCT" queries.
+# Need still to handle "ASK". rdflib does not as yet handle "DESCRIBE".
+
+CONSTRUCT { ?annotated_resource vps:hasKeywords ?keyword .}
+WHERE { ?annotationURI a oa:Annotation ;
+            oa:hasTarget ?annotated_resource ;
+            oa:hasBody [ vp:keyWords ?list ] .
+             
+        ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
+
+}</textarea>
                         </td>
                     </tr>
                     <tr>
