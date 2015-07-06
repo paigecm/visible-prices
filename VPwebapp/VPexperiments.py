@@ -80,20 +80,144 @@ WHERE { ?s a vps:Quotation;
                 ?pence < 500)
     }
 """
-kwquery = """
-# example query retrieving all annotation keywords
+#################### Keywords query experiments, process result ################
+# keywordsQuery = """
+# SELECT ?annotated_resource ?annotationURI ?user_comment ?keyword
+# WHERE { ?annotationURI a oa:Annotation ;
+#                     oa:hasTarget ?annotated_resource ;
+#                     oa:hasBody [ vp:keyWords ?list ] .
+#              
+#               ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
+# 
+# }
+# """
 
-SELECT ?annotated_resource ?annotationURI ?keyword
-WHERE { ?annotationURI a oa:Annotation ;
-            oa:hasTarget ?annotated_resource ;
-            oa:hasBody [ vp:keyWords ?list ] .
-        ?list rdf:rest*/rdf:first ?keyword  .
+# keywordsQuery = """
+# CONSTRUCT { ?annotated_resource vps:hasKeywords ?keyword .}
+# WHERE { ?annotationURI a oa:Annotation ;
+#             oa:hasTarget ?annotated_resource ;
+#             oa:hasBody [ vp:keyWords ?list ] .
+#              
+#         ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
+# 
+# }"""
+
+# keywordsQuery = """
+# # failed, but on the right track:
+# select ?annotated_resource (GROUP_CONCAT(?keyword ; separator = ', ') as ?kwds)
+# WHERE { ?annotationURI a oa:Annotation ;
+#                     oa:hasTarget ?annotated_resource ;
+#                     oa:hasBody [ vp:keyWords ?list ] .
+#              
+#               ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
+# 
+# }
+# # # """
+# kwRes = ggraph.query(keywordsQuery)
+# # # kwDict = {b['?annotated_resource'].toPython(): [k['?keyword'].toPython() for k in kwRes.bindings] for b in kwRes.bindings}
+# # 
+# # ## that dictionary comprehension is the equivalent of the following for loop,
+# # ## but I'm not sure we gain anything by it
+# # # for b in kwRes.bindings:
+# # #     key = b['?annotated_resource'].toPython()
+# # #     if not key in kwDict:
+# # #             kwDict[key] = [b['?keyword'].toPython()]
+# # #     else:
+# # #             kwDict[key].append(b['?keyword'].toPython())
+# # #
+# print kwRes.serialize(format="turtle")
+###############################################################################
+
+################# GENERATE RDF FROM BRAT ANNOTATION DATA ######################
+tstdoc = "/Users/jjc/Sites/VisiblePrices/VP8.ann"
+base_path, ext = os.path.splitext(tstdoc)
+doc_path = base_path + '.txt'
+doctext = open(doc_path, "r").read()
+
+qId = os.path.basename(tstdoc).split('.')[0]
+
+vpq = Namespace("http://visibleprices.org/quotation/")
+vps = Namespace("http://visibleprices.org/vp-schema#")
+vp = Namespace("http://visibleprices.org/")
+this = URIRef(vpq + qId)
+anngraph = Graph() # local graph for testing tstdoc
+annfile = open (tstdoc, "r")
+
+## Dictionary as 'switch' statement:
+## each key calls a function that returns the
+## rdf node appropriate to that entity type
+entities = {
+    "Quotation": lambda x: this,
+    "PriceExpression": lambda x: this + "#" + x,
+    "PricedThing": lambda x: BNode(),
+    "ValueExpression": lambda x: BNode(),
+    "NormalizedValue": lambda x: BNode()
+
 }
-"""
 
+## Parse the brat .ann file into a python dictionary:
+def ann2dict(annf):
+    anndict = dict()
+    for line in annfile:
+        if line[0] == "#":
+            nid, ent_eid, note_string = line.split('\t')
+            entity, eid = ent_eid.split(' ', 1)
+            anndict[nid] = {
+                "node": entity,
+                "note_string": note_string,
+                "type": vps[entity]
+            }
+        
+        if line[0] == 'T':
+            eid, ent_and_offsets, text = line.split('\t')
+            entity, offsets = ent_and_offsets.split(' ', 1)
+            offsets = [list([int(y) for y in x.split()]) for x in offsets.split(';')]
+        
+            anndict[eid] = {
+                "type": vps[entity],
+                "offsets": offsets,
+                "text": text,
+                "node": entities[entity](eid)
+            }
+            
+        elif line[0] == "R":
+            rid, prop, a1, a2, note = re.split('\s+', line, maxsplit=4)
+        
+            anndict[rid] = {
+                "sub": a1.split(':')[1],
+                "obj": a2.split(':')[1],
+                "prop": vps[prop],
+                "note": note if note else None
+            }
+            
+    return anndict
+    
+## generate the dictionary:
+d = ann2dict(annfile)
 
+## add triples to the graph:
+for i in d:
+    entry = d[i]
+    if re.match('T\d+', i):
+        node = entry['node']
+        type = entry["type"]
+        text = entry["text"]
+        offsets = entry["offsets"]
+        anngraph.add(( node, RDF.type, type ))
+        anngraph.add(( node, vps.textData, Literal(text, datatype=XSD.string) ))
+        anngraph.add(( node, vps.offsets, Literal(str(offsets), datatype=XSD.string) ))
+        
+    if re.match('R\d+', i):
+        s = d[entry['sub']]['node']
+        o = d[entry['obj']]['node']
+        p = entry['prop']
+        anngraph.add(( s,p,o ))
+        
+print anngraph.serialize(format="turtle")    
+###############################################################################    
+    
+    
 ### Annotate named subjects
-
 
 def write_to_graph(g_in, testgraph):
     """ with some kind of formal storage layer, replace this with appropriate API calls. For now we'll just serialize the graph and overwrite the file. """
@@ -153,22 +277,6 @@ if __name__ == "__main__":
     form = cgi.FieldStorage()
     
     
-# The dummy class mimics the FieldStorage object in this limited respect:
-# we can initiate our dummy 'form' like this:
-#     form = dummy()
-#     form['sparqlQuery'] = tquery
-#     
-# and access it like this:
-#     form.getvalue("sparqlQuery")
-#     
-# OR
-# 
-# we can initiate it like this:
-#     form = {"serialize": dummy('n3')}
-#     
-# and access it like this:
-#     form["serialize"].value
-#
 ## DEBUG at command line or in editor
 #     class FakeStorage(dict):
 #         def __init__(self, s=None):
@@ -176,13 +284,6 @@ if __name__ == "__main__":
 #         def getvalue(self, k):
 #             return self[k]
 #
-# opt. 1
-#     form = fakeStorage()
-#     form['sparqlQuery'] = tquery
-#
-# opt. 2
-#    form = {'serialize': FakeStorage('n3')}
-# 
 #     form = FakeStorage()
 #     form["target"] = "http://visibleprices.org/vp-schema#person1"
 #     form["username"] = "jfdks"
@@ -201,7 +302,7 @@ if __name__ == "__main__":
             
             print "Content-Type: text/plain\n"
         
-            if re.search('select\s+?', query, re.IGNORECASE):
+            if re.search('select\s+\?', query, re.IGNORECASE):
                 for x in result.bindings:
                     for y in x.items():
                         print "%s: %s" % y
