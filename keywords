@@ -1,0 +1,20 @@
+tangibleGood
+<isTypeOf>
+  food
+  beverage
+  clothing
+  accessory
+  textile
+  medicine
+
+intangibleGood
+<isTypeOf>
+  education
+  entertainment
+  preference: used to describe any context where preference is being bought, i.e. opinions, votes, etc.
+
+gender
+<isTypeOf>
+  male
+  female
+  neutral
