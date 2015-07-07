@@ -38,7 +38,7 @@ vpq:q3 a vps:Quotation ;
     vps:textData "The Norman Razor is the only one that will stand the test by which a Quick, Clean, and Easy Shave may be effected. It Is the most Novel and Perfect Razor of the day. See Testimonials. Black handles, 3s. 6d. Ivory, 5 s. each ; with Patent Guards, perfect security from cutting the face, 2s. each extra;"^^xsd:string .
 
 <http://visibleprices.org/user/jjon/annotation/62dd1b9d38645e0a> a ns1:Annotation ;
-    ns1:hasBody [ vp:keyWords ( "foo"^^xsd:string "bar"^^xsd:string "baz bomb"^^xsd:string ) ;
+    ns1:hasBody [ vp:keyWords ( "tangible_goods"^^xsd:string "male"^^xsd:string "personal_grooming"^^xsd:string ) ;
             vp:userComment "person 1 is a foobar"^^xsd:string ] ;
     ns1:hasTarget vps:person1 .
 
