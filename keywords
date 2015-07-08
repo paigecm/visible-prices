@@ -6,15 +6,30 @@ tangibleGood
   accessory
   textile
   medicine
+  liveAnimal
+  animalProduct
+  plantProduct
 
 intangibleGood
 <isTypeOf>
   education
   entertainment
-  preference: used to describe any context where preference is being bought, i.e. opinions, votes, etc.
+  preference: used to describe any context where preference or favor is being bought, i.e. opinions, votes, etc.
 
 gender
 <isTypeOf>
   male
   female
   neutral
+  
+subject
+<relatedTo>
+  agriculture
+  politics
+  law
+  personal_grooming
+  health
+  visual arts
+  literature
+  theatre
+  dance
