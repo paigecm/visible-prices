@@ -79,6 +79,8 @@ def dict2graph(d, g):
                 try:
                     bibdata = json.loads( entry["notes"] )
                     for p,o in bibdata.items():
+                        p = p.replace('.', '')
+                        p = re.sub('\s+', '', p)
                         if p == "Keywords":
                             # This might collide with the UI keyword annotation function
                             # remember Collection.append() if we need to integrate them.
@@ -87,7 +89,7 @@ def dict2graph(d, g):
                             g.add(( node, vps.keyWords, kwnode ))
                             c = Collection(g, kwnode, kws)
                         else:
-                            g.add(( node, vps[re.sub('\s+', '_', p)], Literal(o, datatype=XSD.string) ))
+                            g.add(( node, vps[p], Literal(o, datatype=XSD.string) ))
                             
                 except ValueError:
                     g.add(( node, RDFS.comment, Literal(entry["notes"], datatype=XSD.string) ))
