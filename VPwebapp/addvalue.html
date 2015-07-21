@@ -1,0 +1,47 @@
+<style>
+
+#addValue-dialog {
+    background-color: rgb(200, 206, 171);
+    color: #000;
+    font-family: "bitstream vera sans mono", monaco, verdana, arial, monospace; font-size: 9pt; 
+    overflow-y: scroll;
+}
+
+#addValue-input table {
+    font-family: "bitstream vera sans mono", monaco, verdana, arial, monospace; font-size: 9pt; 
+    
+}
+
+.highlight {
+    color: #800;
+    background-color: #fff;
+}
+
+.tkey {
+    width: 25%;
+]
+}
+
+</style>
+
+<div id="addValue-dialog">
+    <p style="font-weight: bold; font-size: 125%">PriceExpression resource URI:<br>{0}</h1>
+    <p>In the quotation below, the complete PriceExpression text is highlighted. Translate the price mentioned into pence and enter an xsd:decimal integer in the Normalized Value field. Click the button at the bottom to add the data to the graph.</p>
+    
+    <table id="addValue-input">
+        <tr>
+            <td class='tkey'>Quotation Text:</td>
+            <td style="font-size: 80%">{1}</td>
+        </tr>
+        <tr>
+            <td class='tkey'>Normalized Value:</td>
+            <td><input name="normalizedValue" type="text"></input></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding: 6px"><button id="addValue-button" style="height: 30px">Add this normalized value expression to the graph</input></td>
+        </tr>
+    </table>
+    <p><span style="font-weight: bold; font-size: 125%">Nota Bene: </span> Currently, there's no convenient solution for doing currency calculations in a SPARQL query. This is why we're reducing all values to pence. So if the specified PriceExpression already has a NormalizedValue, this dialog will report that fact and the graph document will not be overwritten. However, in principle, there's no reason why we couldn't record multiple NormalizedValues in a given PriceExpression, giving equivalent values in florins, guilders, or whatever. Such values would simply be of little use in a Linked Open Data context. That kind of currency calculation would have to be done server-side. Overcoming this limitation of RDF/SPARQL could be a fruitful area of continued research.</p>
+    
+</div>

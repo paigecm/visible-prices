@@ -1,3 +1,6 @@
+/******************************************/
+/* Helper functions
+/******************************************/
 String.prototype.format = function () {
   // Using it as a crude templating mechanism, thus:
   // string = "<div><p class='{0}'>I want a {0} of spam eggs and ham {1}<p></div>"
@@ -6,6 +9,19 @@ String.prototype.format = function () {
   var args = arguments;
   return this.replace(/\{(\d+)\}/g, function (m, n) { return args[n]; });
 };
+
+
+function inContext(txtin, offsets){
+    var txt = txtin.split('');
+    offsets.forEach(function(i){
+        var start = i[0];
+        var end = i[1];
+        txt[start] = "<span class=\"highlight\">" + txtin[start];
+        txt[end] = txtin[end] + "</span>";
+    });
+    
+    return txt.join('');
+}
 
 function showModalHTML(response){
     $("#modalsink").html("<div>" + response + "</div>");
@@ -38,6 +54,54 @@ function showLocalLoader(obj){
     $("#localLoader").css({left: "6px", top: ot + 12}).show()
 }
 
+
+/************************************************/
+/* Add a NormalizedValue to the graph if one does
+/* not exist for the specified PriceExpression
+/************************************************/
+function addValue(peURI){
+    $.get('./addvalue.html', function(template){
+        
+        $.ajax({
+            type: "get",
+            url: "VPexperiments.py",
+            data: {'priceExpression': peURI},
+            dataType: 'json',
+            success: function(json){
+                var txt = inContext(json[peURI]['inQuote'], eval(json[peURI]['offsets']));
+                showModalHTML(template.format(peURI, txt));
+                $("#addValue-button").on("click", function(e){
+                    e.preventDefault();
+                    normalizedValue = $("#addValue-input input[name='normalizedValue']").val()
+                    
+                    if (!jQuery.isNumeric(normalizedValue)){
+                        alert("please enter an integer or decimal: '20', or '2.5' (for ha'pennies and farthings and suchlike)")
+                    
+                    } else {
+                        $.ajax({
+                            type: "get",
+                            url: "VPexperiments.py",
+                            data: {"peURI": peURI, "addValue": normalizedValue},
+                            dataType: 'text',
+                            success: function(data){
+                                showModal(data)
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.log(jqXHR.response, textStatus, errorThrown);
+                            }
+                        });
+                    }
+               
+                    });
+                $("#localLoader").hide();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR.response, textStatus, errorThrown);
+            }
+        });
+    });
+}
+
 $(document).ready(function() {
 
     /******************************************/
@@ -57,7 +121,41 @@ $(document).ready(function() {
                 console.log(jqXHR.response, textStatus, errorThrown);
             }
         });
-json = ""
+
+    /*********************************************/
+    /* Populate PriceExpressions list on page load.
+    /* Call addValue() to handle result
+    /*********************************************/
+        $.ajax({
+            type: "get",
+            url: "VPexperiments.py",
+            data: {'getPriceExpressions': true},
+            dataType: 'json',
+            success: function(json){
+                for (q in json){
+                    $("#q_pe_list").append("<li>" + q + "&nbsp;&nbsp;&nbsp;<ul></ul>");
+                    for (pe in json[q]){
+                        $("#q_pe_list li:last-child ul")
+                            .append("<li>" + "<a name='addValue'>" + json[q][pe] + "</a>" + "</li>");
+                        $("#q_pe_list").append("</li>");
+
+                    };
+                };
+                
+                $("a[name='addValue']").on("click", function(e){
+                    showLocalLoader($($(this)));
+                    addValue($(this).text());
+                }).css({'color':'blue', 'cursor':'pointer'});
+       
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR.response, textStatus, errorThrown);
+            }
+        });
+    
+    /****************************************************/
+    /* show annotation dialog and handle handle result
+    /****************************************************/
     $("#NamedSubjectsForm").on("submit", function(e){
         var annotate_target = $("#NamedSubjectsForm select").val();
         $.get('./annote.html', function(template){

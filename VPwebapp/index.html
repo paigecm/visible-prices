@@ -2,6 +2,8 @@
 <html>
 
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href=null />
 <title>VPSandbox</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="jquery.simplemodal.1.4.4.min.js" type="text/javascript"></script>
@@ -9,7 +11,7 @@
 <script src="VPexperiments.js" type="text/javascript"></script>
 <style>
     body {font-family: Didot, Garamond, Times, serif;}
-    #annot-dialog {
+    #annot-dialog, #addValue-dialog {
         background-color: rgb(235, 239, 216);
         color: black;
         font-family: verdana, helvetica, sans-serif;
@@ -19,7 +21,7 @@
         height:90%;
     }
 
-    #annotation-input {border: double #800; padding: 6px}
+    #annotation-input, #addValue-input {border: double #800; padding: 6px}
         
     #modalsink {display: none}
     #modalsink pre {
@@ -41,10 +43,6 @@
         padding:12px;
     }
     
-/* 
-    .simplemodal-wrap {overflow-y: scroll}
- */
-
     #simplemodal-container a.modalCloseImg {
         background:url(close.png) no-repeat; /* adjust url as required */
         width:16px;
@@ -66,14 +64,49 @@
     dt {font-weight: bold}
 
     .searchform {
-      width: 800px;
-      padding: 6px;
-      background-color: rgb(200, 206, 171);
-      border: 3px double #800;
+        width: 800px;
+        padding: 6px;
+        background-color: rgb(200, 206, 171);
+        border: 3px double #800;
       }
 
-    textarea {padding: 12px}
+    #sparqlQuery {
+        padding: 12px;
+        border: 1px solid #800;
+    }
     
+    .listdiv {
+        background-color: #fff;
+        padding: 9px;
+        border: 1px solid #800;
+        max-height: 200;
+        overflow-y: scroll;
+    }
+        
+    #q_pe_list {
+        font-family: "bitstream vera sans mono", monaco, verdana, arial, monospace; font-size: 9pt;
+    }
+    
+/* 
+    #PriceExpressionsForm ul {
+        display: table;
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none
+    }
+
+    #PriceExpressionsForm li {
+        display: table-row;
+        margin-left: 60px;
+    }
+    
+    #PriceExpressionsForm li:before {
+        content: "•";
+        display: table-cell;
+        padding-right: 0.4em
+    }
+ */
+
     #modalsink pre {color: #0f0}
 
 </style>
@@ -92,10 +125,12 @@
 # now handling both "SELECT" and "CONSTRUCT" queries.
 # Need still to handle "ASK". rdflib does not as yet handle "DESCRIBE".
 
-CONSTRUCT { ?annotated_resource vps:hasKeywords ?keyword .}
+CONSTRUCT { ?annotated_resource vps:hasKeywords ?keyword; vps:textData ?text .}
 WHERE { ?annotationURI a oa:Annotation ;
             oa:hasTarget ?annotated_resource ;
-            oa:hasBody [ vp:keyWords ?list ] .
+            oa:hasBody [ vps:keyWords ?list ] .
+
+        ?annotated_resource vps:textData ?text .
              
         ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
 
@@ -134,7 +169,7 @@ WHERE { ?annotationURI a oa:Annotation ;
                 </table>
             </form>
             </dd>
-            <dt>Named Subjects</dt>
+            <dt>Annotate Named Subjects</dt>
             <dd>
             <form class="searchform" id="NamedSubjectsForm" method="get" action="">
                 <table>
@@ -148,6 +183,14 @@ WHERE { ?annotationURI a oa:Annotation ;
                         </td>
                     </tr>
                 </table>
+            </form>
+            </dd>
+            <dt>Add NormalizedValue to graph</dt>
+            <dd>
+            <form class="searchform" id="PriceExpressionsForm" method="get" action="">
+                <div class="listdiv">
+                    <ul id="q_pe_list"></ul>
+                </div>
             </form>
             </dd>
         </dl>        

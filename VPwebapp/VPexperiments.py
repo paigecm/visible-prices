@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
 import cgi
@@ -55,78 +55,21 @@ def subtractASP(t1,t2):
 
 ### Generate RDF graph in memory and execute query:
 oa = Namespace("http://www.w3.org/ns/oa#")
-vps = Namespace("http://visibleprices.org/")
-
+vp = Namespace("http://visibleprices.org/")
+vpq = Namespace("http://visibleprices.org/quotations/")
+vps = Namespace("http://visibleprices.org/vp-schema#")
+unit = Namespace("http://qudt.org/vocab/unit#")
 
 ggraph = ConjunctiveGraph()
-ggraph.parse("data/testgraph.n3", format="n3") ## NB: if we're gonna write to the file, then the webserver process owner (_www in my case) has to own both the file and the directory it's in.
+ggraph.namespace_manager.bind('vp', URIRef("http://visibleprices.org/"))
+ggraph.namespace_manager.bind('vps', URIRef("http://visibleprices.org/vp-schema#"))
+ggraph.namespace_manager.bind('vpq', URIRef("http://visibleprices.org/quotation/"))
+ggraph.namespace_manager.bind('oa', URIRef("http://www.w3.org/ns/oa#"))
+ggraph.namespace_manager.bind('unit', URIRef("http://qudt.org/vocab/unit#"))
 
-tquery = """
-SELECT ?textdata ?headline ?pence
-WHERE { ?s a vps:Quotation;
-            vps:hasPriceExpression ?vpsPE .
-                
-        ?vpsPE a vps:PriceExpression;
-                vps:textData ?textdata;
-                vps:normalizedValue [
-                    vps:pence ?pence
-                ] .
-        
-        OPTIONAL {
-            ?s schema:headline ?headline .
-        }
-                
-        FILTER (?pence > 40 &&
-                ?pence < 500)
-    }
-"""
-#################### Keywords query experiments, process result ################
-# keywordsQuery = """
-# SELECT ?annotated_resource ?annotationURI ?user_comment ?keyword
-# WHERE { ?annotationURI a oa:Annotation ;
-#                     oa:hasTarget ?annotated_resource ;
-#                     oa:hasBody [ vp:keyWords ?list ] .
-#              
-#               ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
-# 
-# }
-# """
-
-# keywordsQuery = """
-# CONSTRUCT { ?annotated_resource vps:hasKeywords ?keyword .}
-# WHERE { ?annotationURI a oa:Annotation ;
-#             oa:hasTarget ?annotated_resource ;
-#             oa:hasBody [ vp:keyWords ?list ] .
-#              
-#         ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
-# 
-# }"""
-
-# keywordsQuery = """
-# # failed, but on the right track:
-# select ?annotated_resource (GROUP_CONCAT(?keyword ; separator = ', ') as ?kwds)
-# WHERE { ?annotationURI a oa:Annotation ;
-#                     oa:hasTarget ?annotated_resource ;
-#                     oa:hasBody [ vp:keyWords ?list ] .
-#              
-#               ?list rdf:rest*/rdf:first ?keyword  . # see: "property paths"
-# 
-# }
-# # # """
-# kwRes = ggraph.query(keywordsQuery)
-# # # kwDict = {b['?annotated_resource'].toPython(): [k['?keyword'].toPython() for k in kwRes.bindings] for b in kwRes.bindings}
-# # 
-# # ## that dictionary comprehension is the equivalent of the following for loop,
-# # ## but I'm not sure we gain anything by it
-# # # for b in kwRes.bindings:
-# # #     key = b['?annotated_resource'].toPython()
-# # #     if not key in kwDict:
-# # #             kwDict[key] = [b['?keyword'].toPython()]
-# # #     else:
-# # #             kwDict[key].append(b['?keyword'].toPython())
-# # #
-# print kwRes.serialize(format="turtle")
-###############################################################################
+## NB: if we're gonna write to the file, then the webserver process owner (_www
+## in my case) has to own both the file and the directory it's in.
+ggraph.parse("data/testgraph2.ttl", format="turtle")
 
 
 ### Annotate named subjects
@@ -135,7 +78,7 @@ def write_to_graph(g_in, testgraph):
     """ with some kind of formal storage layer, replace this with appropriate API calls. For now we'll just serialize the graph and overwrite the file. """
     for t in g_in.triples((None, None, None)):
         testgraph.add((t))
-        f = open("data/testgraph.n3", "w")
+        f = open("data/testgraph2.ttl", "w")
         f.write(testgraph.serialize(format="turtle"))
         f.close()
 
@@ -185,29 +128,70 @@ def annotation(target, user_name, comment, keywds=None):
         return {"serialized_annotation_triples": g.serialize(format='turtle')}
 
 
+### add NormalizedValues
+def quotes_PriceExpressions(g):
+    return json.dumps({quote:[pe for pe in g.objects(quote, vps.hasPriceExpression)] for quote in g.subjects(vps.hasPriceExpression, None)})
+
+def addValue(peURI, pence):
+    if list(ggraph.objects(peURI, vps.hasNormalizedValue)):
+        return "That PriceExpression already has a NormalizedValue"
+        
+    else:
+        g = Graph()
+        newNormalizedValue = BNode()
+        g.add((peURI, vps.hasNormalizedValue, newNormalizedValue))
+        g.add((newNormalizedValue, RDF.type, vps.NormalizedValue))
+        g.add((newNormalizedValue, vps.currency, unit.ASPound))
+        g.add((newNormalizedValue, vps.normalizedValueDetail, Literal("A-S Pound expressed in pence", datatype=XSD.string)))
+        g.add((newNormalizedValue, vps.pence, Literal(pence, datatype=XSD.decimal)))
+    
+        write_to_graph(g, ggraph)
+    
+        return "the following triples have been written to the graph at %s:\n\n%s" % (ggraph.contexts().next().n3(), g.serialize(format="turtle"))
+
+
 if __name__ == "__main__":
     form = cgi.FieldStorage()
-    
-    
-## DEBUG at command line or in editor
-#     class FakeStorage(dict):
-#         def __init__(self, s=None):
-#             self.value = s
-#         def getvalue(self, k):
-#             return self[k]
-#
+
+    ## for DEBUG at command line or in editor
+    class FakeStorage(dict):
+        def __init__(self, s=None):
+            self.value = s
+        def getvalue(self, k):
+            return self[k]
+
 #     form = FakeStorage()
-#     form["target"] = "http://visibleprices.org/vp-schema#person1"
-#     form["username"] = "jfdks"
-#     form["comment"] = "person 1 is a foobar"
-#     form["keywords"] = "fee, fie, fo fum"
+#     form["priceExpression"] = "http://visibleprices.org/quotation/VPex1#T2"
 
     try:
+        if "addValue" in form:
+            pe = URIRef(form.getvalue("peURI"))
+            pence = form.getvalue("addValue")
+            print "Content-Type: application/json\n"
+            print "\n"
+            print addValue(pe, pence)           
+        
+        if "getPriceExpressions" in form:
+            print "Content-Type: application/json\n"
+            print "\n"
+            print quotes_PriceExpressions(ggraph)
+        
         if "namedSubjects" in form:
             print "Content-Type: application/json\n"
             print "\n"
-            print json.dumps(list(set(x.toPython() for x in ggraph.subjects() if not isinstance(x, BNode))))
+            print json.dumps(list( set(x.toPython() for x in ggraph.subjects() if not isinstance(x, BNode)) ))
 
+        if "priceExpression" in form:
+            pe = URIRef(form.getvalue("priceExpression"))
+            print "Content-Type: application/json\n"
+            print "\n"
+            
+            q = ggraph.subjects(None, pe).next()
+            text = ggraph.objects(q, vps.textData).next()
+            pedict = {pe.toPython():{a.toPython().split('#')[1]: b.toPython() for a,b in ggraph.predicate_objects(pe)}}
+            pedict[pe.toPython()]['inQuote'] = text
+            print json.dumps(pedict)
+            
         if "sparqlQuery" in form:
             query = form.getvalue("sparqlQuery")
             result = ggraph.query(query)

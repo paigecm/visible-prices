@@ -1,0 +1,314 @@
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vp: <http://visibleprices.org/> .
+@prefix vpq: <http://visibleprices.org/quotation/> .
+@prefix vps: <http://visibleprices.org/vp-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vpq:VPex1 a vps:Quotation ;
+    vps:Column "Left"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "The Norman Razor is the only one"^^xsd:string ;
+    vps:Number "3"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-17"^^xsd:string ;
+    vps:Position "6th"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex1#T2>,
+        <http://visibleprices.org/quotation/VPex1#T3>,
+        <http://visibleprices.org/quotation/VPex1#T4> ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "male"^^xsd:string ) ;
+    vps:textData """VPex1
+The Norman Razor is the only one that will stand the test by which a Quick, Clean, and Easy Shave may be effected. It Is the most Novel and Perfect Razor of the day. See Testimonials. Black handles, 3s. 6d. Ivory, 5 s. each ; with Patent Guards, perfect security from cutting the face, 2s. each extra; """^^xsd:string .
+
+vpq:VPex10 a vps:Quotation ;
+    vps:ArticleTitle "The Analytical Sanitary Commission. Records Of The Results Of Microscopical And Chemical Analyses Of The Solids And Fluids Consumed By All Classes Of The Public. Spices, And Their Adulterations."^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Number "9"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "225"^^xsd:string ;
+    vps:PeriodicalDate "1852-02-28"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "food"^^xsd:string ) ;
+    vps:textData """VPex10
+6th Sample. Purchased — of Cooper and Co., Moor-street, Soho. 6d. per oz. Nothing but cassia."""^^xsd:string .
+
+vpq:VPex11 a vps:Quotation ;
+    vps:ArticleTitle "The Analytical Sanitary Commission. Records Of The Results Of Microscopical And Chemical Analyses Of The Solids And Fluids Consumed By All Classes Of The Public. Spices, And Their Adulterations."^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Number "9"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "225"^^xsd:string ;
+    vps:PeriodicalDate "1852-02-28"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "food"^^xsd:string ) ;
+    vps:textData """VPex11
+7th Sample. Purchased — of E. Holloway, Oilman, 56, Poland-street. 1s. per oz. Nothing but cassia."""^^xsd:string .
+
+vpq:VPex12 a vps:Quotation ;
+    vps:ArticleTitle "Prices of Provisions and other Landed Produce"^^xsd:string ;
+    vps:Author "Mr. W. Pitt, of Pendeford, near Wolverhampton"^^xsd:string ;
+    vps:OriginalPublisher "T. Wright"^^xsd:string ;
+    vps:Page "149"^^xsd:string ;
+    vps:PubDate "1794"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=iakQAAAAIAAJ&dq=shilling%20OR%20farthing%20OR%20pence%20OR%20penny%20OR%20%22pounds%20OR%20sterling%22&pg=PA2#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "General View of the Agriculture of the County of Stafford, with Observations on the Means of Its Improvement"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "food"^^xsd:string ) ;
+    vps:textData """VPex12
+Wheat, eight shillings and six-pence the bushel."""^^xsd:string .
+
+vpq:VPex13 a vps:Quotation ;
+    vps:ArticleTitle "South Australia"^^xsd:string ;
+    vps:Author "George Long (per HathiTrust: http://catalog.hathitrust.org/Record/008603164)"^^xsd:string ;
+    vps:Editor "George Long (per HathiTrust: http://catalog.hathitrust.org/Record/008603164)"^^xsd:string ;
+    vps:OriginalPublisher "Charles Knight"^^xsd:string ;
+    vps:Page "562"^^xsd:string ;
+    vps:PubDate "1846"^^xsd:string ;
+    vps:PublisherAddress "22 Ludgate Street"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=nJBGAQAAIAAJ&dq=%2230+pounds+sterling%22&pg=PP5&hl=en#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Supplement to the Penny Cyclopædia of the Society for the Diffusion of Useful Knowledge. Volume II. Habenaria--Zingiber."^^xsd:string ;
+    vps:Volume "2"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "liveAnimal"^^xsd:string ) ;
+    vps:textData """VPex13
+The kangaroo-dog is a crossbreed of the bull-dog and greyhound, and used for chasing the emus and kangaroos ; such a dog is often sold for 25 or 30 pounds sterling."""^^xsd:string .
+
+vpq:VPex14 a vps:Quotation ;
+    vps:Column "3rd"^^xsd:string ;
+    vps:Header "Anti-Syphilicon. "^^xsd:string ;
+    vps:Number "5170"^^xsd:string ;
+    vps:OriginalPublisher "S. Nevill"^^xsd:string ;
+    vps:Page "2"^^xsd:string ;
+    vps:PeriodicalDate "1736-04-08"^^xsd:string ;
+    vps:Position "4th"^^xsd:string ;
+    vps:PubDate "1736"^^xsd:string ;
+    vps:PublisherAddress "Old Baily, near Ludgate"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Classified Ads"^^xsd:string ;
+    vps:SourceProvider "Burney Collection"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "(not available)"^^xsd:string ;
+    vps:Title "\"The Daily Post\""^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "medicine"^^xsd:string ) ;
+    vps:textData """VPex14
+The Price of this most noble Anti-Syphilicon is but Six Shillings a Pot, which considering its extraordinary Efficacy, one Pot only being sufficient in most Cases to accomplish the Cure, is not a tenth Part of its Value"""^^xsd:string .
+
+vpq:VPex2 a vps:Quotation ;
+    vps:textData """VPex2
+RODGERS'S IMPROVED SHIRT, No. 84. 31s. 6d. and 37s. 6d. the half-dozen. The most comfortable and perfect-fitting Shirts extant, combining the highest degree of excellence at the smallest cost. Satisfaction (as usual) guaranteed, or the money returned."""^^xsd:string ;
+    rdfs:comment "just a string"^^xsd:string .
+
+vpq:VPex3 a vps:Quotation ;
+    vps:Column "Right"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "Rodgers's Improved Shirts"^^xsd:string ;
+    vps:Number "3"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-17"^^xsd:string ;
+    vps:Position "5th"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "clothing"^^xsd:string ) ;
+    vps:textData """VPex3
+Fashionable Coloured Shirts, ready made or made to order, 20s., 26s., and 31s. 6d. the half dozen. A choice of 200 New Patterns."""^^xsd:string .
+
+vpq:VPex4 a vps:Quotation ;
+    vps:Column "Right"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "Rodgers's Improved Shirts"^^xsd:string ;
+    vps:Number "3"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-17"^^xsd:string ;
+    vps:Position "5th"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "clothing"^^xsd:string ) ;
+    vps:textData """VPex4
+Superb Dress Shirts for evening wear, 6s, 6d., 7s. 6d., 8s. 6d. each."""^^xsd:string .
+
+vpq:VPex5 a vps:Quotation ;
+    vps:Column "1st"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "Pure Cocoa.--Handford and Davies'"^^xsd:string ;
+    vps:Number "2"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-10"^^xsd:string ;
+    vps:Position "2nd"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string ) ;
+    vps:textData """VPex5
+Ceylon Coffee, 10d. to 1s. per lb.; Plantation ditto, 1s. 2d.; Costa Rica, 1s. 3d., Plantation, Java, 1s. 4d.— the three last mentioned are of best value for general family use.— Mocha Old Ripe Coffee, 1s.6d., superior to all other coffee in flavour, but rather weak as compared with most."""^^xsd:string .
+
+vpq:VPex6 a vps:Quotation ;
+    vps:Column "2nd"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "D'Oyley's Scotch Woolen Warehouse."^^xsd:string ;
+    vps:Number "2"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-10"^^xsd:string ;
+    vps:Position "5th"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "clothing"^^xsd:string ) ;
+    vps:textData """VPex6
+The Registered Ventilating WATERPROOF ALPACA and LLAMA WOOL OVERCOATS, suitable for all climates, made only by the sole inventors, WALKER, BABB, and Co., price 40s."""^^xsd:string .
+
+vpq:VPex7 a vps:Quotation ;
+    vps:Column "2nd"^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Header "D'Oyley's Scotch Woolen Warehouse."^^xsd:string ;
+    vps:Number "2"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "1"^^xsd:string ;
+    vps:PeriodicalDate "1852-01-10"^^xsd:string ;
+    vps:Position "5th"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:Section "Lancet General Advertiser (back)"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "clothing"^^xsd:string ) ;
+    vps:textData """VPex7
+Summer Overcoats, 30s., and every other article of clothing of the best workmanship, at the very lowest price, for cash."""^^xsd:string .
+
+vpq:VPex8 a vps:Quotation ;
+    vps:ArticleTitle "The Analytical Sanitary Commission. Records Of The Results Of Microscopical And Chemical Analyses Of The Solids And Fluids Consumed By All Classes Of The Public. Spices, And Their Adulterations."^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Number "9"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "225"^^xsd:string ;
+    vps:PeriodicalDate "1852-02-28"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "food"^^xsd:string ) ;
+    vps:textData """VPex8
+4th Sample. Purchased — of J. Waltham, Oilman, Edward-street, Soho. 8d. per oz. Consisting entirely of cassia."""^^xsd:string .
+
+<http://visibleprices.org/user/jjon/annotation/b8cd8dd7d8bd6819> a oa:Annotation ;
+    oa:hasBody [ vps:keyWords ( "fizz"^^xsd:string "buzz"^^xsd:string ) ;
+            vps:userComment "fizz buzz"^^xsd:string ] ;
+    oa:hasTarget vpq:VPex9 .
+
+<http://visibleprices.org/quotation/VPex1#T2> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[190, 203], [6, 22]]"^^xsd:string ;
+            vps:textData "Black handles The Norman Razor"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[205, 211]]"^^xsd:string ;
+            vps:textData "3s. 6d"^^xsd:string ] ;
+    vps:offsets "[[190, 212], [6, 22]]"^^xsd:string ;
+    vps:textData "Black handles, 3s. 6d. The Norman Razor"^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex1#T3> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[213, 218], [6, 22]]"^^xsd:string ;
+            vps:textData "Ivory The Norman Razor"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[220, 224]]"^^xsd:string ;
+            vps:textData "5 s."^^xsd:string ] ;
+    vps:offsets "[[213, 224], [6, 22]]"^^xsd:string ;
+    vps:textData "Ivory, 5 s. The Norman Razor"^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex1#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[232, 250], [6, 22]]"^^xsd:string ;
+            vps:textData "with Patent Guards The Norman Razor"^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[292, 294]]"^^xsd:string ;
+            vps:textData "2s"^^xsd:string ] ;
+    vps:offsets "[[232, 250], [292, 306], [6, 22]]"^^xsd:string ;
+    vps:textData "with Patent Guards 2s. each extra The Norman Razor"^^xsd:string .
+
+vpq:VPex9 a vps:Quotation ;
+    vps:ArticleTitle "The Analytical Sanitary Commission. Records Of The Results Of Microscopical And Chemical Analyses Of The Solids And Fluids Consumed By All Classes Of The Public. Spices, And Their Adulterations."^^xsd:string ;
+    vps:Editor "Thomas Wakley, Surgeon, M.P. For The Metropolitan District of Finsbury, And Coroner For The County Of Middlesex"^^xsd:string ;
+    vps:Number "9"^^xsd:string ;
+    vps:OriginalPublisher "George Churchill"^^xsd:string ;
+    vps:Page "225"^^xsd:string ;
+    vps:PeriodicalDate "1852-02-28"^^xsd:string ;
+    vps:PubDate "1852"^^xsd:string ;
+    vps:PublisherAddress "423 Strand"^^xsd:string ;
+    vps:PublisherCity "London"^^xsd:string ;
+    vps:SourceProvider "Google Books"^^xsd:string ;
+    vps:SourceType "Electronic"^^xsd:string ;
+    vps:SourceURL "https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false"^^xsd:string ;
+    vps:Title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    vps:Volume "1"^^xsd:string ;
+    vps:keyWords ( "tangibleGood"^^xsd:string "food"^^xsd:string ) ;
+    vps:textData """VPex9
+5th Sample. Purchased — of S. Austin, Grocer, 3, Old Compton-street, Soho. 8d. per oz. Consisting entirely of cassia."""^^xsd:string .
+

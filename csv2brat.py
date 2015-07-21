@@ -6,10 +6,6 @@
 # .ann files start out with minimal markup: the Quotation entity and an
 # AnnotatorNotes element that is a json literal containing all the other metadata.
 
-# TODO: pretty this up for execution from command line, (sys.argv etc.). Right
-# now, just plug the path to the csv file in to the DictReader(); and a path to
-# the directory where you want to write the .txt and .ann files; and provide
-# user feedback for reassurance that something happend.
 
 import csv
 from pprint import pprint
