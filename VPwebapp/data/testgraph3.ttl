@@ -1,0 +1,1612 @@
+
+@prefix bf: <http://bibframe.org/vocab/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/vocab/> .
+@prefix vp: <http://visibleprices.org/> .
+@prefix vpq: <http://visibleprices.org/quotation/> .
+@prefix vps: <http://visibleprices.org/vp-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vpq:VPex1 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "3"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "The Norman Razor is the only one"^^xsd:string ;
+    vps:hasDate "1852-01-17"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex1#T2>,
+        <http://visibleprices.org/quotation/VPex1#T3>,
+        <http://visibleprices.org/quotation/VPex1#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "male"^^xsd:string ) ;
+    vps:textData """VPex1
+The Norman Razor is the only one that will stand the test by which a Quick, Clean, and Easy Shave may be effected. It Is the most Novel and Perfect Razor of the day. See Testimonials. Black handles, 3s. 6d. Ivory, 5 s. each ; with Patent Guards, perfect security from cutting the face, 2s. each extra; """^^xsd:string .
+
+vpq:VPex10 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "9"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1852-02-28"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex10#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex10
+6th Sample. Purchased — of Cooper and Co., Moor-street, Soho. 6d. per oz. Nothing but cassia."""^^xsd:string .
+
+vpq:VPex11 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "9"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1852-02-28"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex11#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex11
+7th Sample. Purchased — of E. Holloway, Oilman, 56, Poland-street. 1s. per oz. Nothing but cassia."""^^xsd:string .
+
+vpq:VPex12 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=iakQAAAAIAAJ&dq=shilling%20OR%20farthing%20OR%20pence%20OR%20penny%20OR%20%22pounds%20OR%20sterling%22&pg=PA2#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator "Mr. W. Pitt, of Pendeford, near Wolverhampton"^^xsd:string ;
+    dc:date "1794"^^xsd:string ;
+    dc:publisher "T. Wright"^^xsd:string ;
+    dc:title "General View of the Agriculture of the County of Stafford, with Observations on the Means of Its Improvement"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    vps:hasDate "1794"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex12#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex12
+Wheat, eight shillings and six-pence the bushel."""^^xsd:string .
+
+vpq:VPex13 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=nJBGAQAAIAAJ&dq=%2230+pounds+sterling%22&pg=PP5&hl=en#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/52461184> ;
+    dc:date "1846"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/22279835> ;
+    dc:title "The Supplement to the Penny Cyclopædia of the Society for the Diffusion of Useful Knowledge. Volume II. Habenaria--Zingiber."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/52461184> ;
+    bibo:volume "2"^^xsd:string ;
+    vps:hasDate "1846"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Livestock> ) ;
+    vps:textData """VPex13
+The kangaroo-dog is a crossbreed of the bull-dog and greyhound, and used for chasing the emus and kangaroos ; such a dog is often sold for 25 or 30 pounds sterling."""^^xsd:string .
+
+vpq:VPex14 a vps:Quotation ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1736"^^xsd:string ;
+    dc:publisher "S. Nevill, Old Baily, near Ludgate"^^xsd:string ;
+    dc:title "\"The Daily Post\""^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Burney_Collection_of_Newspapers> ;
+    bibo:issue "5170"^^xsd:string ;
+    schema:headline "Anti-Syphilicon. "^^xsd:string ;
+    vps:hasDate "1736-04-08"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Pharmaceutical_drug> ) ;
+    vps:textData """VPex14
+The Price of this most noble Anti-Syphilicon is but Six Shillings a Pot, which considering its extraordinary Efficacy, one Pot only being sufficient in most Cases to accomplish the Cure, is not a tenth Part of its Value"""^^xsd:string .
+
+vpq:VPex15 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:issue "5"^^xsd:string ;
+    bibo:volume "4"^^xsd:string ;
+    schema:headline "AMBOYNA TOOTH POWDER"^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> ) ;
+    vps:textData """VPex15
+AMBOYNA TOOTH POWDER, for cleansing, beautifying, and preserving the teeth.-This powder is as pleasant in the application, as it is excellent in its effects; it speedily renders the teeth white and smooth; it fortifies the enamel, and prevents the accumulation of tartar: and even where the enamel has been impaired by the application of pernicious dentifrice, or by any other means, it will renovate it in the manner to be credited only by those who experience or witness its efficacy; it prevents those teeth which are already partly decayed, from becoming worse, and cleanses, beautifies, and preserves those that are sound; it imparts to the breath the most delightful fragrance, and to the gums, that florid reness which indicates a healthful state. Boxes 2s. 6d. each"""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex16 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:issue "5"^^xsd:string ;
+    bibo:volume "4"^^xsd:string ;
+    schema:headline "AMBOYNA TOOTH POWDER"^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> ) ;
+    vps:textData """VPex16
+The AMBOYNA LOTION is a concentrated preparation, and contains all the desirable quantites of the drug of which the Powder is made, and is particularly recommended to be used with the Powder, when the teeth or gums are in a bad state, namely, spongy, sore, or apt to bleed, symptoms which proceed from scurvy, and which this lotion will never fail to remedy. 4s. 6d. per bottle."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex17 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex17
+PATENT LEVER WATCHES, Silver cases with double bottom Cases...6l. 6s. ...with the latest improvements, i. e. the detached escapement, jewelled in four holes, capped, hand to mark the seconds, and maintaining power to continue while winding up."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex18 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex18
+PATENT LEVER WATCHES, Silver cases with Hunting Cases...6l. 16s. 6d.  ...with the latest improvements, i. e. the detached escapement, jewelled in four holes, capped, hand to mark the seconds, and maintaining power to continue while winding up."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex19 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex19
+PATENT LEVER WATCHES, Gold cases. Size for ladies with Gold Dial...16l. 16s. ...with the latest improvements, i. e. the detached escapement, jewelled in four holes, capped, hand to mark the seconds, and maintaining power to continue while winding up."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex2 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "3"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "Rodgers's Improved Shirts"^^xsd:string ;
+    vps:hasDate "1852-01-17"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex2#T3>,
+        <http://visibleprices.org/quotation/VPex2#T5> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "male"^^xsd:string ) ;
+    vps:textData """VPex2
+RODGERS'S IMPROVED SHIRT, No. 84. 31s. 6d. and 37s. 6d. the half-dozen. The most comfortable and perfect-fitting Shirts extant, combining the highest degree of excellence at the smallest cost. Satisfaction (as usual) guaranteed, or the money returned."""^^xsd:string .
+
+vpq:VPex20 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex20
+PATENT LEVER WATCHES, Gold cases. Size for gentlemen with Enamel Dial...18l. 18s. ...with the latest improvements, i. e. the detached escapement, jewelled in four holes, capped, hand to mark the seconds, and maintaining power to continue while winding up."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex21 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex21
+HORIZONTAL FLAT WATCHES, Silver cases. With jewelled movements, very flat...5l. 5s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex22 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex22
+HORIZONTAL FLAT WATCHES, Gold cases. With well-finished movements, jewelled, double bottom, engine-turned cases...9l. 9s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex23 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex23
+HORIZONTAL FLAT WATCHES, Gold cases. With well-finished movements, jewelled in four holes, double bottom, extra strong engine-turned cases...11l. 11s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex24 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex24
+VERTICAL WATCHES, Silver cases. With jewelled, capped movements, in double bottomed cases...4l. 0s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex25 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex25
+VERTICAL WATCHES, Silver cases. With jewelled, capped movements, in double bottomed cases. With second-hand movements..3l. 3s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex26 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mPhfAAAAcAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835-11-01"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/5259928> ;
+    dc:title "The Gentleman's Magazine. By Sylvanus Urban, Gent. Volume IV. New Series. 1835. July to December Inclusive."^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    schema:headline "WARRANTED WATCHES."^^xsd:string ;
+    vps:hasDate "1835-11-01"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex26
+VERTICAL WATCHES, Silver cases. With jewelled, capped movements, in double bottomed cases. With cases not quite so modern...2l. 2s."""^^xsd:string ;
+    rdfs:comment "Advertisements are scattered throughout monthly issues, but several month's sections have been gathered together at the end of the volume."^^xsd:string .
+
+vpq:VPex27 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex27
+Peaches, 5s. to 12s. per doz."""^^xsd:string .
+
+vpq:VPex28 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex28
+Filberts, 80s.to 90s. per 100 lbs."""^^xsd:string .
+
+vpq:VPex29 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex29
+Elderberries, picked, 2s. 6d. to 3s. per gal."""^^xsd:string .
+
+vpq:VPex3 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "3"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "Rodgers's Improved Shirts"^^xsd:string ;
+    vps:hasDate "1852-01-17"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex3#T6>,
+        <http://visibleprices.org/quotation/VPex3#T7>,
+        <http://visibleprices.org/quotation/VPex3#T8> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "clothing"^^xsd:string ) ;
+    vps:textData """VPex3
+Fashionable Coloured Shirts, ready made or made to order, 20s., 26s., and 31s. 6d. the half dozen. A choice of 200 New Patterns."""^^xsd:string .
+
+vpq:VPex30 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex30
+Melons, 2s. to 2s. 6d. per lb."""^^xsd:string .
+
+vpq:VPex31 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex31
+Grapes, 6d. to 4s. per lb."""^^xsd:string .
+
+vpq:VPex32 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex32
+Pines, 6s. to 10s. per lb."""^^xsd:string .
+
+vpq:VPex33 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex33
+Apples, 2s. to 3s. per half sieve"""^^xsd:string .
+
+vpq:VPex34 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex34
+Peas, 2s. to 4s. per half sieve"""^^xsd:string .
+
+vpq:VPex35 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex35
+Plums, 2s. per half sieve"""^^xsd:string .
+
+vpq:VPex36 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex36
+Damsons, 2s. to 3s. per half sieve"""^^xsd:string .
+
+vpq:VPex37 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex37
+French Beans, 2s. 6d. per half sieve"""^^xsd:string .
+
+vpq:VPex38 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex38
+Broccoli, 6d. to 1s. per bunch"""^^xsd:string .
+
+vpq:VPex39 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex39
+Turnips, 1s. 6d. to 3s. per doz. bunches"""^^xsd:string .
+
+vpq:VPex4 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "3"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "Rodgers's Improved Shirts"^^xsd:string ;
+    vps:hasDate "1852-01-17"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex4#T6>,
+        <http://visibleprices.org/quotation/VPex4#T7>,
+        <http://visibleprices.org/quotation/VPex4#T8> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "clothing"^^xsd:string ) ;
+    vps:textData """VPex4
+Superb Dress Shirts for evening wear, 6s, 6d., 7s. 6d., 8s. 6d. each."""^^xsd:string .
+
+vpq:VPex40 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex40
+Carrots, 4s. to 6s."""^^xsd:string .
+
+vpq:VPex41 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex41
+Horse Radish, 3s. to 6s. per bunch"""^^xsd:string .
+
+vpq:VPex42 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex42
+Onions, 3s. to 4s. per doz. bun."""^^xsd:string .
+
+vpq:VPex43 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex43
+Potatoes, 2s. 6d. to 5s. per cwt."""^^xsd:string .
+
+vpq:VPex44 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex44
+Cabbages, 1s. 6d. to 1s. 8d. per score"""^^xsd:string .
+
+vpq:VPex45 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex45
+Celery, 6d. to 1s. per bun."""^^xsd:string .
+
+vpq:VPex46 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex46
+Radishes, 6d. to 1s. per six bun."""^^xsd:string .
+
+vpq:VPex47 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex47
+Nuts, 4s. to 6s. per peck"""^^xsd:string .
+
+vpq:VPex48 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=OyiCElKrJLcC> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator <http://viaf.org/viaf/311957> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/311957> ;
+    dc:title "Cruchley's Picture of London, Comprising the History, Rise, and Progress of the Metropolis to the Present Period... a Route for Viewing the Whole in Seven Days, to which is Annexed, a New and Superior Map with References to the Principal Streets"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "171"^^xsd:string ;
+    bibo:pageStart "171"^^xsd:string ;
+    vps:hasDate "1834"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex48
+Almonds, 7s."""^^xsd:string .
+
+vpq:VPex49 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=0fQWAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1833"^^xsd:string ;
+    dc:publisher "Longman, Rees, Orome, Brown, Green, and Longman, Paternoster-Row"^^xsd:string ;
+    dc:title "The Gardener's Magazine and Register of Rural & Domestic Improvement. Vol IX. 1833"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/4987848> ;
+    bibo:pageEnd "699"^^xsd:string ;
+    bibo:pageStart "699"^^xsd:string ;
+    vps:hasDate "1833-12"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex49
+Foreign grapes - Hamburgh or Frankenthal grapes, brought from Holland, and sold in London from 1s. to 1s. 6d. a pound."""^^xsd:string ;
+    rdfs:comment "Source contains all monthly issues for the year 1833."^^xsd:string .
+
+vpq:VPex5 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "2"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "Pure Cocoa.--Handford and Davies'"^^xsd:string ;
+    vps:hasDate "1852-01-10"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex5#T10>,
+        <http://visibleprices.org/quotation/VPex5#T13>,
+        <http://visibleprices.org/quotation/VPex5#T16>,
+        <http://visibleprices.org/quotation/VPex5#T4>,
+        <http://visibleprices.org/quotation/VPex5#T7> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> ) ;
+    vps:textData """VPex5
+Ceylon Coffee, 10d. to 1s. per lb.; Plantation ditto, 1s. 2d.; Costa Rica, 1s. 3d., Plantation, Java, 1s. 4d.— the three last mentioned are of best value for general family use.— Mocha Old Ripe Coffee, 1s.6d., superior to all other coffee in flavour, but rather weak as compared with most."""^^xsd:string .
+
+vpq:VPex50 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=0fQWAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:creator "M. Saul"^^xsd:string ;
+    dc:date "1833"^^xsd:string ;
+    dc:publisher "Longman, Rees, Orome, Brown, Green, and Longman, Paternoster-Row"^^xsd:string ;
+    dc:title "The Gardener's Magazine and Register of Rural & Domestic Improvement"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "541"^^xsd:string ;
+    bibo:pageStart "541"^^xsd:string ;
+    bibo:volume "9"^^xsd:string ;
+    vps:hasDate "1833-10"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> ) ;
+    vps:textData """VPex50
+Saul's garden chair - The seat is of wood, and the back and feet are of iron, cast in the form of leaves, of the acanthus, thistle, or artichoke kind. The whole chair is painted of a deep green.  These chairs are sold at 16s. each.  They may be made with a more ornamented back, when they will cost a little more; or with one foot less, when they will cost not quite so much."""^^xsd:string .
+
+vpq:VPex51 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mzI_AQAAIAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher "Gustavus Arabin, at 9 Wellington Street, Strand."^^xsd:string ;
+    dc:title "The Spectator. A WEEKLY JOURNAL OF NEWS, POLITICS, LITERATURE, AND SCIENCE. VOLUME THE SEVENTH. 1834. "^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "594"^^xsd:string ;
+    bibo:pageStart "594"^^xsd:string ;
+    bibo:volume "7"^^xsd:string ;
+    schema:headline "DUGGIN'S PATENT DOUBLE-BRIMMED VENTILATING BEAVER HATS "^^xsd:string ;
+    vps:hasDate "1834-06-21"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "accessory"^^xsd:string ) ;
+    vps:textData """VPex51
+DUGGIN'S PATENT DOUBLE-BRIMMED VENTILATING BEAVER HATS are acknowledged to be the best kind of Hat ever yet invented.  They are exceedingly Light - less than Four Ounces Weight - will never injure by Wet, lose their Colour and Shape, and will not prevent the egress of Perspiration, which has been so much the complaint of Water-Proof Hats, only producing the headache and the loss of hair. Price 21s. and 26s."""^^xsd:string .
+
+vpq:VPex52 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=mzI_AQAAIAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1834"^^xsd:string ;
+    dc:publisher "Gustavus Arabin, at 9 Wellington Street, Strand."^^xsd:string ;
+    dc:title "The Spectator. A WEEKLY JOURNAL OF NEWS, POLITICS, LITERATURE, AND SCIENCE. VOLUME THE SEVENTH. 1834. "^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:volume "7"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "plantProduct"^^xsd:string ) ;
+    vps:textData """VPex52
+EMOLLIENT VEGETABLE SOAP - In this soap is introduced Vegetable Oils and Herbs of the most approved emollient qualities, as likewise extracts from Flowers of the purest fragrance. Sold at 1s. a square."""^^xsd:string .
+
+vpq:VPex53 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=GU0SAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1835"^^xsd:string ;
+    dc:publisher "H.M.Stationary Office, 14 Charing Cross"^^xsd:string ;
+    dc:title "Parliamentary Papers, House of Commons and Command"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:volume "11"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex53
+...the price of malt - We retail at 7s. 6d. a bushel, and sell at 7s. by the large quantity."""^^xsd:string .
+
+vpq:VPex54 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex54
+The very fine weather which we have experienced throughout the month of August has been most favourable for the harvest; a large portion of the wheat is cut and carried and new corn of every description has been brought to market in excellent condition for grinding. Under these circumstances good sound wheat may be purchased at from 35 to 40s per quarter."""^^xsd:string .
+
+vpq:VPex55 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex55
+Owing to the scarcity of water the millers have not lowered the price of flour in due proportion, as the best is still quoted at 38s sack, and the loaf of 4 lbs. still sells in the Metropolis at from 6d to 7d."""^^xsd:string .
+
+vpq:VPex56 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex56
+Very good flour for household purposes may be purchased for 34s per sack of 280lbs"""^^xsd:string .
+
+vpq:VPex57 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex57
+There has been an abundant supply of butchers meat much of it of inferior quality owing to the want of keep and extreme drought obliging the feeders to dispose of their stock in little better than store condition. Beef is from 2s. to 3s. 6d. per stone of 8 lbs. Mutton from 2s. 2d. to 3s. 6d. Lamb 3s. 6d. to 4s. 4d. Veal from 3s. to 4s. 4d. Pork large from 2s. 6d. to 2s. 10d.; small from 3s. 10d. to 4s. 4d."""^^xsd:string .
+
+vpq:VPex58 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex58
+Capons 4s. to 4s. 6d."""^^xsd:string .
+
+vpq:VPex59 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex59
+Fowls good size, 2s. 6d. to 2s. 9d."""^^xsd:string .
+
+vpq:VPex6 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "2"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "D'Oyley's Scotch Woolen Warehouse."^^xsd:string ;
+    vps:hasDate "1852-01-10"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex6#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "clothing"^^xsd:string ) ;
+    vps:textData """VPex6
+The Registered Ventilating WATERPROOF ALPACA and LLAMA WOOL OVERCOATS, suitable for all climates, made only by the sole inventors, WALKER, BABB, and Co., price 40s."""^^xsd:string .
+
+vpq:VPex60 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex60
+Chickens 1s. 9d. to 2s."""^^xsd:string .
+
+vpq:VPex61 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex61
+Geese now in prime season 5s to 7s each"""^^xsd:string .
+
+vpq:VPex62 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex62
+ Turkey poults 4s to 4s 6d"""^^xsd:string .
+
+vpq:VPex63 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex63
+Rabbits wild 2s to 2s 4d per couple"""^^xsd:string .
+
+vpq:VPex64 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex64
+Roasting Pigs 4s to 7s each"""^^xsd:string .
+
+vpq:VPex65 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex65
+Pigeons 6d to 8d each"""^^xsd:string .
+
+vpq:VPex66 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex66
+Grouse 6s to 7s per brace"""^^xsd:string .
+
+vpq:VPex67 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex67
+Partridges 4s to 4s. 6d."""^^xsd:string .
+
+vpq:VPex68 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex68
+Flappers young wild ducks 4s to 4s 6d"""^^xsd:string .
+
+vpq:VPex69 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex69
+Leverets 3s 6d to 4s each"""^^xsd:string .
+
+vpq:VPex7 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "2"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "D'Oyley's Scotch Woolen Warehouse."^^xsd:string ;
+    vps:hasDate "1852-01-10"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex7#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "clothing"^^xsd:string ) ;
+    vps:textData """VPex7
+Summer Overcoats, 30s., and every other article of clothing of the best workmanship, at the very lowest price, for cash."""^^xsd:string .
+
+vpq:VPex70 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex70
+Fawns 7s to 8s each"""^^xsd:string .
+
+vpq:VPex71 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex71
+The price of game varies exceedingly. Venison is in season and haunches are sold at from 30s to 60s or 70s. A good one may sometimes be had at the lowest quotation if intended for immediate use."""^^xsd:string .
+
+vpq:VPex72 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex72
+The drought has undoubtedly injured the Potato crops. Ware Potatoes are 4s.; inferior 2s 6d and chats 1s 6d per cwt."""^^xsd:string .
+
+vpq:VPex73 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex73
+Butter - good fresh may be purchased from 11d to 13d per lb ."""^^xsd:string .
+
+vpq:VPex74 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex74
+Salt is full 40s the firkin"""^^xsd:string .
+
+vpq:VPex75 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex75
+Cheese is from 50s to 70s per cwt according to quality and of last year's manufacture"""^^xsd:string .
+
+vpq:VPex76 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex76
+Soap, yellow 48s., Mottled and Curd ditto from 52s. to 58s. """^^xsd:string .
+
+vpq:VPex77 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex77
+Bacon of good quality can be purchased for 35s. per cwt and even by the pound under 6d. """^^xsd:string .
+
+vpq:VPex78 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex78
+The best hams may also be obtained at 55s."""^^xsd:string .
+
+vpq:VPex79 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    schema:headline "London Markets"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex79
+Eggs fetch from 6s. to 7s. per hundred"""^^xsd:string .
+
+vpq:VPex8 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "9"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1852-02-28"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex8#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex8
+4th Sample. Purchased — of J. Waltham, Oilman, Edward-street, Soho. 8d. per oz. Consisting entirely of cassia."""^^xsd:string .
+
+vpq:VPex80 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "plantProduct"^^xsd:string ) ;
+    vps:textData """VPex80
+...the price of Hay which may be quoted at from 3l. to 5l. per load of 36 trusses according to quality"""^^xsd:string .
+
+vpq:VPex81 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "plantProduct"^^xsd:string ) ;
+    vps:textData """VPex81
+Straw from 2l. 12s. to 2l. 15s."""^^xsd:string .
+
+vpq:VPex82 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=4ztOAAAAYAAJ> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1836"^^xsd:string ;
+    dc:publisher <http://viaf.org/viaf/127862311> ;
+    dc:title "The Magazine of Domestic Economy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:pageEnd "96"^^xsd:string ;
+    bibo:pageStart "96"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1835-09"^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "plantProduct"^^xsd:string ) ;
+    vps:textData """VPex82
+Coals from 20s. to 32s. per ton delivered"""^^xsd:string .
+
+vpq:VPex83 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=5w0HAAAAQAAJ&pg=PA3> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1853"^^xsd:string ;
+    dc:publisher "Eyre & Williams, 91 Fleet-St"^^xsd:string ;
+    dc:title "Eyre & Williams' indisputable cab fare indicator; or, The Hackney carriage act made easy"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "male"^^xsd:string ) ;
+    vps:textData """VPex83
+The Norman Razor. Black Handles 3/- Each, Ivory 4/-"""^^xsd:string .
+
+vpq:VPex84 a vps:Quotation ;
+    dc:title "The Law Times "^^xsd:string ;
+    bibo:issue "348"^^xsd:string ;
+    schema:headline "\"The Norman Razor is the only one\""^^xsd:string ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> "male"^^xsd:string ) ;
+    vps:textData """VPex84
+THE NORMAN RAZOR is the only one that will stand the test by which a QUICK CLEAN and EASY SHAVE may be obtained It is the most and PERFECT RAZOR of the DAY. Black Handles 3s. 6d. Ivory 5s each """^^xsd:string .
+
+vpq:VPex9 a vps:Quotation ;
+    bf:hasInstance <https://books.google.ca/books?id=tRhAAAAAcAAJ&pg=PP5#v=onepage&q&f=false> ;
+    bf:place <https://www.wikidata.org/wiki/Q84> ;
+    dc:date "1852"^^xsd:string ;
+    dc:publisher "George Churchill, 423 Strand"^^xsd:string ;
+    dc:title "The Lancet: A Journal of British and Foreign Medicine, Physiology, Surgery, Chemistry, Criticism, Literature, and News"^^xsd:string ;
+    dcterms:format "Electronic"^^xsd:string ;
+    bibo:distributor <http://dbpedia.org/page/Google_Books> ;
+    bibo:editor <http://viaf.org/viaf/69699803> ;
+    bibo:issue "9"^^xsd:string ;
+    bibo:volume "1"^^xsd:string ;
+    vps:hasDate "1852-02-28"^^xsd:string ;
+    vps:hasPriceExpression <http://visibleprices.org/quotation/VPex9#T4> ;
+    vps:keyWords ( <http://dbpedia.org/page/Tangible_property> <http://dbpedia.org/page/Food> ) ;
+    vps:textData """VPex9
+5th Sample. Purchased — of S. Austin, Grocer, 3, Old Compton-street, Soho. 8d. per oz. Consisting entirely of cassia."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex1#T2> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[190, 203], [6, 22]]"^^xsd:string ;
+            vps:textData """Black handles The Norman Razor"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[205, 211]]"^^xsd:string ;
+            vps:textData """3s. 6d"""^^xsd:string ] ;
+    vps:offsets "[[190, 212], [6, 22]]"^^xsd:string ;
+    vps:textData """Black handles, 3s. 6d. The Norman Razor"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex1#T3> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[213, 218], [6, 22]]"^^xsd:string ;
+            vps:textData """Ivory The Norman Razor"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[220, 224]]"^^xsd:string ;
+            vps:textData """5 s."""^^xsd:string ] ;
+    vps:offsets "[[213, 224], [6, 22]]"^^xsd:string ;
+    vps:textData """Ivory, 5 s. The Norman Razor"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex1#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[232, 250], [6, 22]]"^^xsd:string ;
+            vps:textData """with Patent Guards The Norman Razor"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[292, 294]]"^^xsd:string ;
+            vps:textData """2s"""^^xsd:string ] ;
+    vps:offsets "[[232, 250], [292, 306], [6, 22]]"^^xsd:string ;
+    vps:textData """with Patent Guards 2s. each extra The Norman Razor"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex10#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[73, 79], [93, 99]]"^^xsd:string ;
+            vps:textData """per oz cassia"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[69, 72]]"^^xsd:string ;
+            vps:textData """6d."""^^xsd:string ] ;
+    vps:offsets "[[69, 80], [93, 99]]"^^xsd:string ;
+    vps:textData """6d. per oz. cassia"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex11#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[78, 85], [98, 104]]"^^xsd:string ;
+            vps:textData """per oz. cassia"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[74, 77]]"^^xsd:string ;
+            vps:textData """1s."""^^xsd:string ] ;
+    vps:offsets "[[74, 77], [78, 85], [98, 104]]"^^xsd:string ;
+    vps:textData """1s. per oz. cassia"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex12#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[44, 55], [7, 12]]"^^xsd:string ;
+            vps:textData """the bushel. Wheat"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[14, 43]]"^^xsd:string ;
+            vps:textData """eight shillings and six-pence"""^^xsd:string ] ;
+    vps:offsets "[[7, 55]]"^^xsd:string ;
+    vps:textData """Wheat, eight shillings and six-pence the bushel."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex2#T3> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[6, 38], [62, 76]]"^^xsd:string ;
+            vps:textData """RODGERS'S IMPROVED SHIRT, No. 84 the half-dozen"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[40, 48]]"^^xsd:string ;
+            vps:textData """31s. 6d."""^^xsd:string ] ;
+    vps:offsets "[[6, 48], [62, 76]]"^^xsd:string ;
+    vps:textData """RODGERS'S IMPROVED SHIRT, No. 84. 31s. 6d. the half-dozen"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex2#T5> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[6, 39], [62, 76]]"^^xsd:string ;
+            vps:textData """RODGERS'S IMPROVED SHIRT, No. 84. the half-dozen"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[53, 61]]"^^xsd:string ;
+            vps:textData """37s. 6d."""^^xsd:string ] ;
+    vps:offsets "[[53, 61], [6, 39], [62, 77]]"^^xsd:string ;
+    vps:textData """37s. 6d. RODGERS'S IMPROVED SHIRT, No. 84. the half-dozen."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex3#T6> a vps:PriceExpression ;
+    vps:hasPricedThing _:N3f76d36122364a14b24dd4b1cbb82496 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[64, 68]]"^^xsd:string ;
+            vps:textData """20s."""^^xsd:string ] ;
+    vps:offsets "[[6, 62], [64, 68], [89, 103]]"^^xsd:string ;
+    vps:textData """Fashionable Coloured Shirts, ready made or made to order 20s. the half dozen"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex3#T7> a vps:PriceExpression ;
+    vps:hasPricedThing _:N3f76d36122364a14b24dd4b1cbb82496 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[80, 87]]"^^xsd:string ;
+            vps:textData """31s. 6d"""^^xsd:string ] ;
+    vps:offsets "[[6, 62], [80, 88], [89, 103]]"^^xsd:string ;
+    vps:textData """Fashionable Coloured Shirts, ready made or made to order 31s. 6d. the half dozen"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex3#T8> a vps:PriceExpression ;
+    vps:hasPricedThing _:N3f76d36122364a14b24dd4b1cbb82496 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[70, 74]]"^^xsd:string ;
+            vps:textData """26s."""^^xsd:string ] ;
+    vps:offsets "[[6, 63], [70, 74], [89, 103]]"^^xsd:string ;
+    vps:textData """Fashionable Coloured Shirts, ready made or made to order, 26s. the half dozen"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex4#T6> a vps:PriceExpression ;
+    vps:hasPricedThing _:N4938fdccda2b4aa786e75e5f20204fc4 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[44, 50]]"^^xsd:string ;
+            vps:textData """6s, 6d"""^^xsd:string ] ;
+    vps:offsets "[[44, 51], [6, 42], [70, 74]]"^^xsd:string ;
+    vps:textData """6s, 6d. Superb Dress Shirts for evening wear each"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex4#T7> a vps:PriceExpression ;
+    vps:hasPricedThing _:N4938fdccda2b4aa786e75e5f20204fc4 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[53, 59]]"^^xsd:string ;
+            vps:textData """7s. 6d"""^^xsd:string ] ;
+    vps:offsets "[[53, 60], [6, 42], [70, 75]]"^^xsd:string ;
+    vps:textData """7s. 6d. Superb Dress Shirts for evening wear each."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex4#T8> a vps:PriceExpression ;
+    vps:hasPricedThing _:N4938fdccda2b4aa786e75e5f20204fc4 ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[62, 68]]"^^xsd:string ;
+            vps:textData """8s. 6d"""^^xsd:string ] ;
+    vps:offsets "[[6, 43], [62, 69], [70, 75]]"^^xsd:string ;
+    vps:textData """Superb Dress Shirts for evening wear, 8s. 6d. each."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex5#T10> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[13, 19], [33, 40], [69, 79]]"^^xsd:string ;
+            vps:textData """Coffee per lb. Costa Rica"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[81, 88]]"^^xsd:string ;
+            vps:textData """1s. 3d."""^^xsd:string ] ;
+    vps:offsets "[[13, 19], [69, 89]]"^^xsd:string ;
+    vps:textData """Coffee Costa Rica, 1s. 3d.,"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex5#T13> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[13, 19], [33, 40], [90, 107]]"^^xsd:string ;
+            vps:textData """Coffee per lb. Plantation, Java,"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[108, 115]]"^^xsd:string ;
+            vps:textData """1s. 4d."""^^xsd:string ] ;
+    vps:offsets "[[13, 19], [90, 115]]"^^xsd:string ;
+    vps:textData """Coffee Plantation, Java, 1s. 4d."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex5#T16> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[185, 206], [33, 40]]"^^xsd:string ;
+            vps:textData """Mocha Old Ripe Coffee per lb."""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[208, 214]]"^^xsd:string ;
+            vps:textData """1s.6d."""^^xsd:string ] ;
+    vps:offsets "[[185, 215], [33, 41]]"^^xsd:string ;
+    vps:textData """Mocha Old Ripe Coffee, 1s.6d., per lb.;"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex5#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[33, 39], [6, 19]]"^^xsd:string ;
+            vps:textData """per lb Ceylon Coffee"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[21, 31]]"^^xsd:string ;
+            vps:textData """10d. to 1s"""^^xsd:string ] ;
+    vps:offsets "[[6, 41]]"^^xsd:string ;
+    vps:textData """Ceylon Coffee, 10d. to 1s. per lb.;"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex5#T7> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[13, 19], [33, 40], [42, 52]]"^^xsd:string ;
+            vps:textData """Coffee per lb. Plantation"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[60, 66]]"^^xsd:string ;
+            vps:textData """1s. 2d"""^^xsd:string ] ;
+    vps:offsets "[[13, 19], [33, 40], [42, 52], [60, 67]]"^^xsd:string ;
+    vps:textData """Coffee per lb. Plantation 1s. 2d."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex6#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[21, 75]]"^^xsd:string ;
+            vps:textData """Ventilating WATERPROOF ALPACA and LLAMA WOOL OVERCOATS"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[160, 169]]"^^xsd:string ;
+            vps:textData """price 40s"""^^xsd:string ] ;
+    vps:offsets "[[160, 170], [21, 75]]"^^xsd:string ;
+    vps:textData """price 40s. Ventilating WATERPROOF ALPACA and LLAMA WOOL OVERCOATS"""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex7#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[6, 22]]"^^xsd:string ;
+            vps:textData """Summer Overcoats"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[24, 27]]"^^xsd:string ;
+            vps:textData """30s"""^^xsd:string ] ;
+    vps:offsets "[[6, 28]]"^^xsd:string ;
+    vps:textData """Summer Overcoats, 30s."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex8#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[109, 115], [78, 84]]"^^xsd:string ;
+            vps:textData """cassia per oz"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[74, 77]]"^^xsd:string ;
+            vps:textData """8d."""^^xsd:string ] ;
+    vps:offsets "[[109, 115], [74, 85]]"^^xsd:string ;
+    vps:textData """cassia 8d. per oz."""^^xsd:string .
+
+<http://visibleprices.org/quotation/VPex9#T4> a vps:PriceExpression ;
+    vps:hasPricedThing [ a vps:PricedThing ;
+            vps:offsets "[[116, 122], [85, 91]]"^^xsd:string ;
+            vps:textData """cassia per oz"""^^xsd:string ] ;
+    vps:hasValueExpression [ a vps:ValueExpression ;
+            vps:offsets "[[81, 84]]"^^xsd:string ;
+            vps:textData """8d."""^^xsd:string ] ;
+    vps:offsets "[[116, 122], [81, 92]]"^^xsd:string ;
+    vps:textData """cassia 8d. per oz."""^^xsd:string .
+
+_:N3f76d36122364a14b24dd4b1cbb82496 a vps:PricedThing ;
+    vps:offsets "[[6, 62], [89, 103]]"^^xsd:string ;
+    vps:textData """Fashionable Coloured Shirts, ready made or made to order the half dozen"""^^xsd:string .
+
+_:N4938fdccda2b4aa786e75e5f20204fc4 a vps:PricedThing ;
+    vps:offsets "[[6, 42], [70, 74]]"^^xsd:string ;
+    vps:textData """Superb Dress Shirts for evening wear each"""^^xsd:string .

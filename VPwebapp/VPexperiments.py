@@ -60,16 +60,16 @@ vpq = Namespace("http://visibleprices.org/quotations/")
 vps = Namespace("http://visibleprices.org/vp-schema#")
 unit = Namespace("http://qudt.org/vocab/unit#")
 
-ggraph = ConjunctiveGraph()
-ggraph.namespace_manager.bind('vp', URIRef("http://visibleprices.org/"))
-ggraph.namespace_manager.bind('vps', URIRef("http://visibleprices.org/vp-schema#"))
-ggraph.namespace_manager.bind('vpq', URIRef("http://visibleprices.org/quotation/"))
-ggraph.namespace_manager.bind('oa', URIRef("http://www.w3.org/ns/oa#"))
-ggraph.namespace_manager.bind('unit', URIRef("http://qudt.org/vocab/unit#"))
+vpgraph = ConjunctiveGraph()
+vpgraph.namespace_manager.bind('vp', URIRef("http://visibleprices.org/"))
+vpgraph.namespace_manager.bind('vps', URIRef("http://visibleprices.org/vp-schema#"))
+vpgraph.namespace_manager.bind('vpq', URIRef("http://visibleprices.org/quotation/"))
+vpgraph.namespace_manager.bind('oa', URIRef("http://www.w3.org/ns/oa#"))
+vpgraph.namespace_manager.bind('unit', URIRef("http://qudt.org/vocab/unit#"))
 
 ## NB: if we're gonna write to the file, then the webserver process owner (_www
 ## in my case) has to own both the file and the directory it's in.
-ggraph.parse("data/testgraph2.ttl", format="turtle")
+vpgraph.parse("data/testgraph3.ttl", format="turtle")
 
 
 ### Annotate named subjects
@@ -78,24 +78,25 @@ def write_to_graph(g_in, testgraph):
     """ with some kind of formal storage layer, replace this with appropriate API calls. For now we'll just serialize the graph and overwrite the file. """
     for t in g_in.triples((None, None, None)):
         testgraph.add((t))
-        f = open("data/testgraph2.ttl", "w")
+        f = open("data/testgraph3.ttl", "w")
         f.write(testgraph.serialize(format="turtle"))
         f.close()
 
 def annotationExists(uri):
     uri = URIRef(uri)
-    if (uri, None, None) in ggraph:
+    if (uri, None, None) in vpgraph:
         return True
     
 
 def annotation(target, user_name, comment, keywds=None):
-    """thisAnnotation id is the full string, eg:
-    http://visibleprices.org/user/jjon/annotation/92c53723ba5f1e162e7c44e8bf8c71d02ed4065a
-    the last element being a hash (hashlib.sha1(oa:hastarget).hexdigest()) of this full string:
-    http://visibleprices.org/quotations/q3
-    TODO:
-        * read up oa for use of BNode for body element
-        * make keywds optional parameter
+    """
+    thisAnnotation id is the full string, eg:
+    http://visibleprices.org/user/jjon/annotation/
+    92c53723ba5f1e162e7c44e8bf8c71d02ed4065a the last element being an sha1 hash
+    (hashlib.sha1(oa:hastarget).hexdigest()) of this full string:
+    "http://visibleprices.org/quotations/q3". For readability we'll just use the
+    first 16 digits of the hash.
+    TODO: read up on oa for use of BNode for body element
     """
 
     target = target
@@ -122,18 +123,17 @@ def annotation(target, user_name, comment, keywds=None):
             kws = [Literal(x, datatype=XSD.string) for x in keywds]
             c = Collection(g, keywordCollection, kws)
         
-        write_to_graph(g, ggraph)
+        write_to_graph(g, vpgraph)
         
 
         return {"serialized_annotation_triples": g.serialize(format='turtle')}
-
 
 ### add NormalizedValues
 def quotes_PriceExpressions(g):
     return json.dumps({quote:[pe for pe in g.objects(quote, vps.hasPriceExpression)] for quote in g.subjects(vps.hasPriceExpression, None)})
 
 def addValue(peURI, pence):
-    if list(ggraph.objects(peURI, vps.hasNormalizedValue)):
+    if list(vpgraph.objects(peURI, vps.hasNormalizedValue)):
         return "That PriceExpression already has a NormalizedValue"
         
     else:
@@ -145,9 +145,9 @@ def addValue(peURI, pence):
         g.add((newNormalizedValue, vps.normalizedValueDetail, Literal("A-S Pound expressed in pence", datatype=XSD.string)))
         g.add((newNormalizedValue, vps.pence, Literal(pence, datatype=XSD.decimal)))
     
-        write_to_graph(g, ggraph)
+        write_to_graph(g, vpgraph)
     
-        return "the following triples have been written to the graph at %s:\n\n%s" % (ggraph.contexts().next().n3(), g.serialize(format="turtle"))
+        return "the following triples have been written to the graph at %s:\n\n%s" % (vpgraph.contexts().next().n3(), g.serialize(format="turtle"))
 
 
 if __name__ == "__main__":
@@ -174,27 +174,28 @@ if __name__ == "__main__":
         if "getPriceExpressions" in form:
             print "Content-Type: application/json\n"
             print "\n"
-            print quotes_PriceExpressions(ggraph)
+            print quotes_PriceExpressions(vpgraph)
         
         if "namedSubjects" in form:
             print "Content-Type: application/json\n"
             print "\n"
-            print json.dumps(list( set(x.toPython() for x in ggraph.subjects() if not isinstance(x, BNode)) ))
+            print json.dumps(list( set(x.toPython() for x in vpgraph.subjects() if not isinstance(x, BNode)) ))
 
         if "priceExpression" in form:
             pe = URIRef(form.getvalue("priceExpression"))
             print "Content-Type: application/json\n"
             print "\n"
             
-            q = ggraph.subjects(None, pe).next()
-            text = ggraph.objects(q, vps.textData).next()
-            pedict = {pe.toPython():{a.toPython().split('#')[1]: b.toPython() for a,b in ggraph.predicate_objects(pe)}}
+            q = vpgraph.subjects(None, pe).next()
+            text = vpgraph.objects(q, vps.textData).next()
+            pedict = {pe.toPython():{a.toPython().split('#')[1]: b.toPython() for a,b in vpgraph.predicate_objects(pe)}}
             pedict[pe.toPython()]['inQuote'] = text
             print json.dumps(pedict)
             
         if "sparqlQuery" in form:
             query = form.getvalue("sparqlQuery")
-            result = ggraph.query(query)
+            ns = dict(vpgraph.namespace_manager.namespaces())
+            result = vpgraph.query(query, initNs=ns)
             
             print "Content-Type: text/plain\n"
         
@@ -213,7 +214,7 @@ if __name__ == "__main__":
             sformat = form['serialize'].value
             print "Content-Type: text/plain\n"
             print "\n"
-            print ggraph.serialize(format = sformat)
+            print vpgraph.serialize(format = sformat)
 
         if "target" in form:
             target = form.getvalue("target")
@@ -235,111 +236,3 @@ if __name__ == "__main__":
         print "Content-Type: text/html\n"
     
         print e
-
-
-################### related example data below this line #######################
-###################    not needed for the script above   #######################
-
-
-# see http://qudt.org/vocab/unit#
-GBPqudt = """
-<rdf:RDF 
-xmlns:html="http://uispin.org/html#" 
-xmlns:lm-cat="http://www.linkedmodel.org/catalog/lm#" 
-xmlns:quantity-1.1="http://qudt.org/1.1/schema/quantity#" 
-xmlns:letrs="http://uispin.org/letrs#" 
-xmlns:lm-cat-1.2="http://www.linkedmodel.org/1.2/catalog/lm#" 
-xmlns:arg="http://spinrdf.org/arg#" 
-xmlns:qudt-1.1="http://qudt.org/1.1/schema/qudt#" 
-xmlns:omv="http://omv.ontoware.org/2005/05/ontology#" 
-xmlns:qudt-unit-1.1="http://qudt.org/1.1/vocab/unit#" 
-xmlns:qudt-quantity-1.1="http://qudt.org/1.1/vocab/quantity#" 
-xmlns:quantity="http://qudt.org/schema/quantity#" 
-xmlns:qudt-dimension="http://qudt.org/vocab/dimension#" 
-xmlns:void="http://rdfs.org/ns/void#" 
-xmlns:dtype="http://www.linkedmodel.org/schema/dtype#" 
-xmlns:lmdoc="http://www.linkedmodel.org/oui/lmdoc#" 
-xmlns:tui="http://uispin.org/tui#" 
-xmlns:sp="http://spinrdf.org/sp#" 
-xmlns:style="http://uispin.org/style#" 
-xmlns:qudt-quantity="http://qudt.org/vocab/quantity#" 
-xmlns:voag-1.0="http://voag.linkedmodel.org/1.0/schema/voag#" 
-xmlns:owl="http://www.w3.org/2002/07/owl#" 
-xmlns:let="http://uispin.org/let#" 
-xmlns:dimension="http://qudt.org/schema/dimension#" 
-xmlns:xhtml="http://topbraid.org/xhtml#" 
-xmlns:spl="http://spinrdf.org/spl#" 
-xmlns:unit="http://qudt.org/vocab/unit#" 
-xmlns:sxml="http://topbraid.org/sxml#" 
-xmlns:qudt-cat="http://qudt.org/catalog/qudt#" 
-xmlns:fn="http://www.w3.org/2005/xpath-functions#" 
-xmlns:vaem-1.2="http://www.linkedmodel.org/1.2/schema/vaem#" 
-xmlns:voag="http://voag.linkedmodel.org/schema/voag#" 
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-xmlns:dimension-1.1="http://qudt.org/1.1/schema/dimension#" 
-xmlns:spin="http://spinrdf.org/spin#" 
-xmlns:foaf="http://xmlns.com/foaf/0.1/" 
-xmlns:qudt="http://qudt.org/schema/qudt#" 
-xmlns:smf="http://topbraid.org/sparqlmotionfunctions#" 
-xmlns:qudt-cat-11="http://qudt.org/1.1/catalog/qudt#" 
-xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
-xmlns:composite="http://www.topbraid.org/2007/05/composite.owl#" 
-xmlns:qudt-dimensionalunit-1.1="http://qudt.org/1.1/vocab/dimensionalunit#" 
-xmlns:vaem="http://www.linkedmodel.org/schema/vaem#" 
-xmlns:catalog="http://www.linkedmodel.org/schema/catalog#" 
-xmlns:dtype-1.0="http://www.linkedmodel.org/1.0/schema/dtype#" 
-xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
-xmlns:css="http://uispin.org/css#" 
-xmlns:ui="http://uispin.org/ui#" 
-xmlns:dc="http://purl.org/dc/elements/1.1/" 
-xmlns:spra="http://spinrdf.org/spra#" 
-xmlns:vann="http://purl.org/vocab/vann/" 
-xmlns:qudt-dimension-1.1="http://qudt.org/1.1/vocab/dimension#" 
-xmlns:catalog-1.0="http://www.linkedmodel.org/1.2/schema/catalog#" 
-xmlns:creativecommons="http://creativecommons.org/ns#" 
-xmlns:spr="http://spinrdf.org/spr#" 
-xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://qudt.org/vocab/unit">
-<rdf:Description rdf:about="#PoundSterling">
-    <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Pound_sterling"/>
-    <qudt:description>United Kingdom</qudt:description>
-    <qudt:currencyExponent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</qudt:currencyExponent>
-    <qudt:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">826</qudt:code>
-    <qudt:abbreviation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GBP</qudt:abbreviation>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pound Sterling</rdfs:label>
-    <rdf:type rdf:resource="http://qudt.org/schema/qudt#CurrencyUnit"/>
-</rdf:Description>
-</rdf:RDF>
-"""
-
-# for rst-currency see http://personal.sirma.bg/vladimir/crm/art/thesauri.ttl.html
-GBPrst = """
-@prefix crm:   <http://erlangen-crm.org/current/> .
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix unit:  <http://qudt.org/vocab/unit#> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rst-currency:      <http://www.researchspace.org/thesaurus/currency/> .
-rst-currency:GBP a crm:E55_Type, skos:Concept;
-  skos:inScheme rst-currency:; crm:P2_has_type rst-currency:;
-  rdfs:label "GBP".
-"""
-
-ex2 = """
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rst-currency: <http://www.researchspace.org/thesaurus/currency/> .
-@prefix crm: <http://erlangen-crm.org/current/> .
-
-rst-currency:HFL a crm:E55_Type, skos:Concept;
-  skos:inScheme rst-currency:; crm:P2_has_type rst-currency:;
-  rdfs:label "HFL", "florijnen". # I assume they are the same
-rst-currency:GBP a crm:E55_Type, skos:Concept;
-  skos:inScheme rst-currency:; crm:P2_has_type rst-currency:;
-  rdfs:label "GBP".
-rst-currency:FRF a crm:E55_Type, skos:Concept;
-  skos:inScheme rst-currency:; crm:P2_has_type rst-currency:;
-  rdfs:label "FRF".
-"""
-
