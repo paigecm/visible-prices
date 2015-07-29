@@ -12,6 +12,8 @@ String.prototype.format = function () {
 
 
 function inContext(txtin, offsets){
+    /* to highlight in text according to offsets */ 
+    /* as in addValue below */
     var txt = txtin.split('');
     offsets.forEach(function(i){
         var start = i[0];
@@ -104,9 +106,11 @@ function addValue(peURI){
 
 $(document).ready(function() {
 
-    /******************************************/
+    /***********************************************/
     /* Populate namedSubjects list on page load
-    /******************************************/
+    /* ?Is there value in merging this with the
+    /* Populate PriceExpressions ajax call below?
+    /***********************************************/
         $.ajax({
             type: "get",
             url: "VPexperiments.py",

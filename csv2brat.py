@@ -11,16 +11,16 @@ import csv
 from pprint import pprint
 import json
 
-path_to_csv = "/Users/jjc/Sites/VisiblePrices/May 2015 VP Data for Jon - Sheet1.csv"
-path_to_brat_data_dir = "/Users/jjc/Sites/VisiblePrices/VP_revised_Jul_8/"
+path_to_csv = "/path/to/csv"
+path_to_brat_data_dir = "/path/to/brat/data/dir"
 csvIn = csv.DictReader(open(path_to_csv, 'rU'))
 qno = 1
 
-for x in csvIn:
+for row in csvIn:
     # generate the .txt file
     qid = "VPex" + str(qno)
     txt = open(path_to_brat_data_dir + "VPex" + str(qno) + ".txt", 'w')
-    txt.write(qid + "\n" + x["Quote"].replace('"',''))
+    txt.write(qid + "\n" + row["Quote"].replace('"',''))
     txt.close()
 
     # generate the .ann file
@@ -28,7 +28,9 @@ for x in csvIn:
     
     # NB: the dictionary comprehension, as stated, tests for the existence of values `if i[1]`
     # so metadata dicts won't all have the same set of keys: watch out for KeyErrors
-    metadata = {i[0]:i[1] for i in x.items() if i[1] and i[0] != "Quote"} 
+    metadata = {i[0]:i[1] for i in row.items() if i[1] and i[0] != "Quote"} 
     ann.write("""T1\tQuotation 0 %d\t%s\n#1\tAnnotatorNotes T1\t%s"""% (len(qid), qid, json.dumps(metadata))) 
     ann.close()
     qno += 1
+
+# Generates the files, gives no feedback :^(
